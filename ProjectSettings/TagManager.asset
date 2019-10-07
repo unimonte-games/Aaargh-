@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Block
+  - Inimigo
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Bullet
+  - Shield
   - 
   - 
   - 
