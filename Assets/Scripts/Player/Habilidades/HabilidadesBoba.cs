@@ -4,38 +4,41 @@ using UnityEngine;
 
 public class HabilidadesBoba : MonoBehaviour
 {
-    public float lookRadius = 10f;
-    public GameObject prefab;
-
+    public int damage;
+    public float range;
+    public GameObject escopeta;
     public GameObject bullet;
-    public float timeShots;
-    public float StartTimeShots;
-    void Update()
+
+    public GameObject prefab;
+    void FixedUpdate()
     {
-        Distract();
-        Arma();
+        //Caixa
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            Tiro();
+            Debug.Log("Deu tiro");
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            Arma();
+            Debug.Log("Deu tiro");
+        }
+        
     }
 
-    void Distract()
-    {
-        if (Input.GetButtonDown("E"))
-        {
-            Instantiate(prefab);
-            prefab.AddComponent(typeof(Rigidbody));
-            prefab.AddComponent<Rigidbody>().isKinematic = true;
-        }
-    }
     void Arma()
     {
-        if (Input.GetMouseButton(0))
+        Instantiate(prefab, transform.position, Quaternion.identity);
+
+    }
+    void Tiro()
+    {
+        Instantiate(bullet, transform.position, Quaternion.identity);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
-            timeShots = StartTimeShots;
+            hit.transform.gameObject.GetComponent<IA>().vida = -10;
         }
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
-    }
+    
 }

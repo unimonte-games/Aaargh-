@@ -12,6 +12,8 @@ public class IA : MonoBehaviour
     public bool pperto;
     public GameObject bullet;
     public Transform player;
+    public float vida = 100;
+    bool chamouMorte = false;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -50,5 +52,24 @@ public class IA : MonoBehaviour
                 pperto = false;
             }
         }
+        
+        if (vida <= 0)
+        {
+            vida = 0;
+            if (chamouMorte == false)
+            {
+                chamouMorte = true;
+                StartCoroutine("Morrer");
+            }
+        }
+    }
+
+    IEnumerator Morrer()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(1);    
+            Destroy(gameObject);
+        
+        
     }
 }
