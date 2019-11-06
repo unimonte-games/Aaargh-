@@ -1025,8 +1025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61033f4c8c80244dafa9fba2f83775a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
-  multiplayerScene: 1
+  currentScene: 1
+  multiplayerScene: 3
 --- !u!4 &1142986553
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,8 +1356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayStart: 0
   maxPlayers: 4
-  menuScene: 3
-  multiplayerScene: 4
+  menuScene: 1
+  multiplayerScene: 3
 --- !u!4 &1561561933
 Transform:
   m_ObjectHideFlags: 0
