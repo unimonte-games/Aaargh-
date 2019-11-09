@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPun, IPunObservable
 {
     public float velocidade;
+    public PhotonView pv;
 
     // otimização :3 (evita coleta de lixo desnecessário)
     Vector3 deltaMovimento = Vector3.zero;
@@ -14,84 +16,104 @@ public class Player : MonoBehaviour
     Transform meu_transform;
     public int vida = 100;
     public GameObject[] inimigo;
-    public float speedRotation;
     public Animator anim;
+    public float jumpforce = 100f;
+    public Rigidbody rb;
+
+
+    private bool IsGrounded;
 
     void Awake()
     {
-        meu_transform = GetComponent<Transform>();
-        transform.tag = "Player";
-        anim = GetComponent<Animator>();
+        if (photonView.IsMine)
+        {
+            meu_transform = GetComponent<Transform>();
+            transform.tag = "Player";
+            anim = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody>();
+        }
     }
     void FixedUpdate()
     {
-        // guarda de antemão a rotação
-        var rotacaoAntes = meu_transform.rotation;
-
-        // aplica movimento
+        if (photonView.IsMine)
         {
-            // reseta rotação para que a função Translate não nos faça voar
-            meu_transform.rotation = Quaternion.Euler(0, meu_transform.localEulerAngles.y, 0);
-            Moviment();
-
-            // define eixos usando entrada do usuário
-            deltaMovimento.x = Input.GetAxis("Horizontal");
-            deltaMovimento.z = Input.GetAxis("Vertical");
-
-            
-            // normaliza se necessário
-            if (deltaMovimento.magnitude > 1)
-                deltaMovimento.Normalize();
-
-            // multiplica pela velocidade e delta tempo
-            deltaMovimento *= velocidade * Time.deltaTime;
+            // guarda de antemão a rotação
+            var rotacaoAntes = meu_transform.rotation;
 
             // aplica movimento
-            meu_transform.Translate(deltaMovimento);
-            
-        }
-        
-        // acompanhar chão
-        {
-            // faz raycast pra baixo
-            Ray raio = new Ray(raioRef.position, Vector3.down);
-            RaycastHit hit;
-            if (Physics.Raycast(raio, out hit, raioDist))
             {
-                // acompanha distância do chão
-                Vector3 pos = meu_transform.position;
-                pos.y = hit.point.y + chaoDist;
-                meu_transform.position = pos;
+                // reseta rotação para que a função Translate não nos faça voar
+                meu_transform.rotation = Quaternion.Euler(0, meu_transform.localEulerAngles.y, 0);
+                Moviment();
+
+                // define eixos usando entrada do usuário
+                deltaMovimento.x = Input.GetAxis("Horizontal");
+                deltaMovimento.z = Input.GetAxis("Vertical");
+
+                // normaliza se necessário
+                if (deltaMovimento.magnitude > 1)
+                    deltaMovimento.Normalize();
+
+                // multiplica pela velocidade e delta tempo
+                deltaMovimento *= velocidade * Time.deltaTime;
+
+                // aplica movimento
+                meu_transform.Translate(deltaMovimento);
+
+                if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
+                {
+                    Jump();
+                }
+            }
+            // acompanhar chão
+            {
+                // faz raycast pra baixo
+                Ray raio = new Ray(raioRef.position, Vector3.down);
+                RaycastHit hit;
+                if (Physics.Raycast(raio, out hit, raioDist))
+                {
+                    // acompanha distância do chão
+                    Vector3 pos = meu_transform.position;
+                    pos.y = hit.point.y + chaoDist;
+                    meu_transform.position = pos;
+                }
+            }
+            // redefine a rotação que tinha antes
+            meu_transform.rotation = rotacaoAntes;
+            if (vida <= 0)
+            {
+                vida = 0;
+                Morto();
             }
         }
-
-        // redefine a rotação que tinha antes
-        meu_transform.rotation = rotacaoAntes;
-
-
-        if(vida <= 0)
-        {
-            vida = 0;
-            Morto();
-        }
-        
     }
-    void ApplyExtraTurnRotation()
-    {
-        // help the character turn faster (this is in addition to root rotation in the animation)
-        float turnSpeed = Mathf.Lerp(speedRotation, speedRotation, deltaMovimento.z);
-        transform.Rotate(0, deltaMovimento.x * turnSpeed * Time.deltaTime, 0);
-        Debug.Log("Ta rodando");
-    }
+
     void Morto()
     {
         SceneManager.LoadScene("SampleScene");//Fazer cena para morto
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Inimigo")
+        if (photonView.IsMine)
         {
-            vida -= 10;
+            if (collision.gameObject.tag == "Inimigo")
+            {
+                vida -= 10;
+            }
+            if (collision.gameObject.tag == "Ground")
+            {
+                IsGrounded = true;
+            }
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (photonView.IsMine)
+        {
+            if (collision.gameObject.tag == "Ground")
+            {
+                IsGrounded = false;
+            }
         }
     }
     private void Moviment()
@@ -99,22 +121,21 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector3 moviment = new Vector3(x, y);
-
         if (moviment == Vector3.zero)
         {
             anim.SetBool("Andando", true);
             anim.SetFloat("Ver", y);
             anim.SetFloat("Hor", x);
         }
-
         else
         {
             anim.SetBool("Andando", false);
         }
-
-
     }
-
+    void Jump()
+    {
+        rb.AddForce(Vector2.up * jumpforce);
+    }
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
@@ -150,6 +171,14 @@ public class Player : MonoBehaviour
 
             // desenha linha representando Raycast
             Gizmos.DrawLine(raioRef.position, raioRef.position + Vector3.down * raioDist);
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
         }
     }
 #endif

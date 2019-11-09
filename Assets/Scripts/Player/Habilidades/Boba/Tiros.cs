@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using Photon.Pun;
 
 [Serializable]
 public class LaserOuMira
@@ -33,12 +34,12 @@ public class Arma919
     public AudioClip somTiro, somRecarga;
 }
 [RequireComponent(typeof(AudioSource))]
-public class Tiros : MonoBehaviour
+public class Tiros : MonoBehaviourPun, IPunObservable
 {
 
     public KeyCode botaoRecarregar = KeyCode.R;
     public int armaInicial = 0;
-    public string TagInimigo = "inimigo";
+    public string TagInimigo = "Inimigo";
     public Text BalasPente, BalasExtra;
     public Arma919[] armas;
     //
@@ -79,11 +80,11 @@ public class Tiros : MonoBehaviour
         //troca de armas
         if (Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")) > 0 && recarregando == false && atirando == false)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            if (Input.GetAxis("R") > 0)
             {
                 armaAtual++;
             }
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            if (Input.GetAxis("R") < 0)
             {
                 armaAtual--;
             }
@@ -105,7 +106,7 @@ public class Tiros : MonoBehaviour
             emissorSom.clip = armas[armaAtual].somTiro;
             emissorSom.PlayOneShot(emissorSom.clip);
             armas[armaAtual].balasNoPente--;
-            GameObject balaTemp = Instantiate(bullet, transform.position + transform.forward, transform.rotation);
+            GameObject balaTemp = PhotonNetwork.Instantiate("Bullet", transform.position + transform.forward, transform.rotation);
             Destroy(balaTemp, 0.5f);
         }
         //recarregar
@@ -182,6 +183,14 @@ public class Tiros : MonoBehaviour
             stylez.alignment = TextAnchor.MiddleCenter;
             GUI.skin.label.fontSize = 20;
             GUI.Label(new Rect(Screen.width / 2 - 6, Screen.height / 2 - 12, 12, 22), "+");
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
         }
     }
 }
