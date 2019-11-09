@@ -105,6 +105,9 @@ public class Player : MonoBehaviour
             anim.SetBool("Andando", true);
             anim.SetFloat("Ver", y);
             anim.SetFloat("Hor", x);
+            anim.SetBool("Skill", true);
+            anim.SetBool("SkillII", true);
+            anim.SetBool("Death", true);
         }
 
         else

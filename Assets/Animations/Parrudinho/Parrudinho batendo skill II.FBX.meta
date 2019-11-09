@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 7da4c18f88b1c814895508ae0408909d
+guid: 2bea79ef6a2185b4a914a636595d0ee0
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Take 001
+    second: Skill
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Skill
       takeName: Take 001
       internalID: 0
       firstFrame: 0
