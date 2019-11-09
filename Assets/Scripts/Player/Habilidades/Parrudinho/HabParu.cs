@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Photon.Pun;
 
-public class HabParu : MonoBehaviour
+public class HabParu : MonoBehaviourPun, IPunObservable
 {
     public List<GameObject> Inimigos = new List<GameObject>();
 
@@ -12,25 +13,28 @@ public class HabParu : MonoBehaviour
     private float nextFireTime = 0;
     private void Update()
     {
-        if(Time.time > nextFireTime)
+        if (photonView.IsMine)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Time.time > nextFireTime)
             {
-                for (int i = 0; i < Inimigos.Count; i++)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    PalmaDMorte(Inimigos[i]);
+                    for (int i = 0; i < Inimigos.Count; i++)
+                    {
+                        PalmaDMorte(Inimigos[i]);
+                    }
+                    nextFireTime = Time.time + cooldownTime;
                 }
-                nextFireTime = Time.time + cooldownTime;
-            }
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                for (int i = 0; i < Inimigos.Count; i++)
+                if (Input.GetKeyDown(KeyCode.Y))
                 {
-                    Contadordevida(Inimigos[i]);
-                    Vector3 posicao = new Vector3(Inimigos[i].transform.position.x, Inimigos[i].transform.position.y, Inimigos[i].transform.position.z - 10);
-                    Inimigos[i].transform.position = posicao;
+                    for (int i = 0; i < Inimigos.Count; i++)
+                    {
+                        Contadordevida(Inimigos[i]);
+                        Vector3 posicao = new Vector3(Inimigos[i].transform.position.x, Inimigos[i].transform.position.y, Inimigos[i].transform.position.z - 10);
+                        Inimigos[i].transform.position = posicao;
+                    }
+                    nextFireTime = Time.time + cooldownTime;
                 }
-                nextFireTime = Time.time + cooldownTime;
             }
         }
     }
@@ -59,5 +63,12 @@ public class HabParu : MonoBehaviour
 
         if (GBJ.GetComponent<IA>())
             GBJ.GetComponent<IA>().vida -= 100f;
+    }
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+        }
     }
 }

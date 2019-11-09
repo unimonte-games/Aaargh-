@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class QuestComprador : MonoBehaviour
 {
@@ -8,9 +9,7 @@ public class QuestComprador : MonoBehaviour
     public GameObject QuestVendUI;
     public GameObject[] objToCreate;
     public Transform posToCreate;
-
     public int cost;
-    
     void Start()
     {
         script = GameObject.FindWithTag("GameController").GetComponent<Money>();
@@ -20,7 +19,6 @@ public class QuestComprador : MonoBehaviour
         QuestVendUI.SetActive(true);
         Cursor.visible = true;
     }
-
     void OnTriggerExit()
     {
         QuestVendUI.SetActive(false);
@@ -29,7 +27,6 @@ public class QuestComprador : MonoBehaviour
     public void QuestItem()
     {
         script.gold -= cost;
-        Instantiate(objToCreate[4], posToCreate.position, posToCreate.rotation);
+        PhotonNetwork.Instantiate(objToCreate[4].name, posToCreate.position, posToCreate.rotation);
     }
-
 }
