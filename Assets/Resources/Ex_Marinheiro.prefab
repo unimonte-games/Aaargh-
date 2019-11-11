@@ -44,6 +44,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.19669254, y: 0.20098853, z: 0.19239658}
   m_Center: {x: -0.08376725, y: 0.021479124, z: -0.14605598}
+--- !u!1 &1748700946262040567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1678728400985234285}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5868319880646844767}
+  m_Layer: 0
+  m_Name: Parridinho_andando (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5868319880646844767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1678728400985234285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748700946262040567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5924131647678853239}
+  m_Father: {fileID: 6272948294172136246}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2432578203272062676
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,13 +132,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3701097967153351368}
-  m_LocalRotation: {x: 0.14428079, y: -0, z: -0, w: 0.9895368}
-  m_LocalPosition: {x: 0.06782723, y: 1.1500002, z: -3.34}
+  m_LocalRotation: {x: 0.19248769, y: 0, z: 0, w: 0.9812994}
+  m_LocalPosition: {x: 0.06782723, y: 1.698, z: -3.541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6272948294172136246}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 16.591002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.196, y: 0, z: 0}
 --- !u!20 &933991044928084472
 Camera:
   m_ObjectHideFlags: 0
@@ -433,6 +464,37 @@ Transform:
   m_Father: {fileID: 6272948294172136246}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5132266813442551630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1678728400985234285}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5924131647678853239}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5924131647678853239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 08e4890a664cbae4996c35c0d18fabdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1678728400985234285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132266813442551630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5868319880646844767}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6440711659303028341
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +615,7 @@ Transform:
   - {fileID: 189961898308142817}
   - {fileID: 8326016985621559367}
   - {fileID: 2584507850771381864}
-  - {fileID: 5924131647678853239}
+  - {fileID: 5868319880646844767}
   - {fileID: 1678728402248208449}
   - {fileID: 7759871513985014950}
   m_Father: {fileID: 0}
@@ -872,11 +934,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6272948294172136246}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 08e4890a664cbae4996c35c0d18fabdc,
-        type: 3}
-      propertyPath: m_Name
-      value: Parridinho_andando
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 08e4890a664cbae4996c35c0d18fabdc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,6 +1003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 24.725056
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 08e4890a664cbae4996c35c0d18fabdc,
+        type: 3}
+      propertyPath: m_Name
+      value: Parridinho_andando
       objectReference: {fileID: 0}
     - target: {fileID: -4825858078467123107, guid: 08e4890a664cbae4996c35c0d18fabdc,
         type: 3}
@@ -1019,9 +1081,3 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cbb665b678584c44fa66e8cbfd67bf63, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e4890a664cbae4996c35c0d18fabdc, type: 3}
---- !u!4 &5924131647678853239 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 08e4890a664cbae4996c35c0d18fabdc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1678728400985234285}
-  m_PrefabAsset: {fileID: 0}
