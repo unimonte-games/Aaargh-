@@ -107,7 +107,6 @@ public class WaveSpawn : MonoBehaviour
     {
 
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        PhotonNetwork.InstantiateSceneObject("Enemy", _sp.position, _sp.rotation);
         PhotonNetwork.InstantiateSceneObject("Enemy2", _sp.position, _sp.rotation);
     }
 }

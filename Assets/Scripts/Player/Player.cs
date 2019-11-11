@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviourPun, IPunObservable
 {
@@ -20,7 +21,8 @@ public class Player : MonoBehaviourPun, IPunObservable
     public float jumpforce = 100f;
     public Rigidbody rb;
 
-
+    [Header("Unity Stuff")]
+    public Image healthBar;
     private bool IsGrounded;
 
     void Awake()
@@ -80,6 +82,7 @@ public class Player : MonoBehaviourPun, IPunObservable
             }
             // redefine a rotação que tinha antes
             meu_transform.rotation = rotacaoAntes;
+
             if (vida <= 0)
             {
                 vida = 0;
@@ -90,15 +93,23 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     void Morto()
     {
-        SceneManager.LoadScene("SampleScene");//Fazer cena para morto
+        if (photonView.IsMine)
+        {
+            SceneManager.LoadScene("InimigoTest2");//Fazer cena para morto
+
+            vida += 100;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (photonView.IsMine)
         {
+
             if (collision.gameObject.tag == "Inimigo")
             {
                 vida -= 10;
+                healthBar.fillAmount = vida / 100;
+
             }
             if (collision.gameObject.tag == "Ground")
             {
