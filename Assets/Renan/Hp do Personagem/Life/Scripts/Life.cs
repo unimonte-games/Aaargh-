@@ -5,7 +5,8 @@ using UnityEngine;
 public class Life : MonoBehaviour
 {
     public float CharacterLife;
-    public Texture Blood,Line;
+    public Texture Line;
+    public Sprite Blood;
     public int LifeFull = 100;
 
     void Start()
