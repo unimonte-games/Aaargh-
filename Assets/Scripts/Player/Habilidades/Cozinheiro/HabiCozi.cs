@@ -40,6 +40,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     void BUFF(GameObject GBJ)
     {
         GBJ.GetComponent<Player>().vida += 9;
+        GBJ.GetComponent<Player>().healthBar.fillAmount += 9;
     }
     //Randomizacao dos itens 
     void IRandom()
