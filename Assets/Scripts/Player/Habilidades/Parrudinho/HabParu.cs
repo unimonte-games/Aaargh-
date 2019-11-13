@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class HabParu : MonoBehaviourPun, IPunObservable
 {
     public List<GameObject> Inimigos = new List<GameObject>();
 
     public float cooldownTime = 1;
+    public Image imageCooldown;
+    public Image imageCooldown2;
 
     private float nextFireTime = 0;
     private void Update()
@@ -24,6 +27,8 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                         PalmaDMorte(Inimigos[i]);
                     }
                     nextFireTime = Time.time + cooldownTime;
+                    imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
+
                 }
                 if (Input.GetKeyDown(KeyCode.Y))
                 {
@@ -34,6 +39,8 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                         Inimigos[i].transform.position = posicao;
                     }
                     nextFireTime = Time.time + cooldownTime;
+                    imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
+
                 }
             }
         }

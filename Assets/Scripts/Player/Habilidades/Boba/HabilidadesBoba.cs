@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
 {
@@ -9,6 +10,7 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
     public GameObject prefab;
     public Transform PosiInstantiate;
     private float nextFireTime = 0;
+    public Image imageCooldown;
     void Update()
     {
         if (photonView.IsMine)
@@ -20,6 +22,7 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
                     Caixa();
                     Debug.Log("Deu tiro");
                     nextFireTime = Time.time + cooldownTime;
+                    imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                 }
             }
         }

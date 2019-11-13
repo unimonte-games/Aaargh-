@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class HabiCozi : MonoBehaviourPun, IPunObservable
 {
@@ -11,6 +12,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     public int objN;
     public int objC = 0;
     public float cooldownTime = 1;
+    public Image imageCooldown;
+    public Image imageCooldown2;
 
     private float nextFireTime = 0;
     void Update()
@@ -26,12 +29,15 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                         BUFF(players[i]);
                     }
                     nextFireTime = Time.time + cooldownTime;
+                    imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                 }
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
+                    imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
+
                 }
             }
         }
