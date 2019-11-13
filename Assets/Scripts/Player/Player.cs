@@ -95,7 +95,7 @@ public class Player : MonoBehaviourPun, IPunObservable
     {
         if (photonView.IsMine)
         {
-            SceneManager.LoadScene("InimigoTest2");//Fazer cena para morto
+            PhotonNetwork.LoadLevel("GameOver");//Fazer cena para morto
 
             vida += 100;
         }
