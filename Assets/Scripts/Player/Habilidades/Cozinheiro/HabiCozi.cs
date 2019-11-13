@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using UnityEngine.UI;
 
-public class HabiCozi : MonoBehaviour
+public class HabiCozi : MonoBehaviourPun, IPunObservable
 {
     public List<GameObject> players = new List<GameObject>();
     public GameObject[] objetos;
@@ -10,36 +12,41 @@ public class HabiCozi : MonoBehaviour
     public int objN;
     public int objC = 0;
     public float cooldownTime = 1;
+    public Image imageCooldown;
+    public Image imageCooldown2;
 
     private float nextFireTime = 0;
     void Update()
     {
-        if (Time.time > nextFireTime)
+        if (photonView.IsMine)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Time.time > nextFireTime)
             {
-                for (int i = 0; i < players.Count; i++)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    BUFF(players[i]);
+                    for (int i = 0; i < players.Count; i++)
+                    {
+                        BUFF(players[i]);
+                    }
+                    nextFireTime = Time.time + cooldownTime;
+                    imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                 }
-                nextFireTime = Time.time + cooldownTime;
-            }
-            //Colocar script OBCOLISOR nos objetos para funcionar a colisao
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                IRandom();
-                nextFireTime = Time.time + cooldownTime;
+                //Colocar script OBCOLISOR nos objetos para funcionar a colisao
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    IRandom();
+                    nextFireTime = Time.time + cooldownTime;
+                    imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
+
+                }
             }
         }
-            
-        
-         
     }
     //da os Buffs
     void BUFF(GameObject GBJ)
     {
-        GBJ.GetComponent<Player>().velocidade += 10f;
-        GBJ.GetComponent<Player>().vida -= 9;
+        GBJ.GetComponent<Player>().vida += 9;
+        GBJ.GetComponent<Player>().healthBar.fillAmount += 9;
     }
     //Randomizacao dos itens 
     void IRandom()
@@ -52,8 +59,15 @@ public class HabiCozi : MonoBehaviour
             objC += 1;
         }
         objetos[objN].SetActive(true);
-        objetos[objC] = Instantiate(objetos[objC], PosiInstantiate.position + PosiInstantiate.forward, PosiInstantiate.rotation);
+        objetos[objC] = PhotonNetwork.Instantiate(objetos[objC].name, PosiInstantiate.position + PosiInstantiate.forward, PosiInstantiate.rotation);
         Destroy(objetos[objC], 0.3f);
     }
-    
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+    }
+
 }
