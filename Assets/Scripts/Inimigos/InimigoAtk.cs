@@ -28,6 +28,7 @@ public class InimigoAtk : MonoBehaviour
         {
             StartCoroutine("TempoDAtaque");
             player.GetComponent<Player>().vida -= 10;
+            SoundManager.PlaySound(SoundManager.Sound.Praga);
         }
     }
     IEnumerator TempoDAtaque()

@@ -31,7 +31,7 @@ public class Arma919
     public GameObject objetoArma;
     public GameObject lugarParticula;
     public GameObject particulaFogo;
-    public AudioClip somTiro, somRecarga;
+    //public AudioClip somTiro, somRecarga;
 }
 [RequireComponent(typeof(AudioSource))]
 public class Tiros : MonoBehaviourPun, IPunObservable
@@ -44,7 +44,7 @@ public class Tiros : MonoBehaviourPun, IPunObservable
     public Arma919[] armas;
     //
     int armaAtual;
-    AudioSource emissorSom;
+    //AudioSource emissorSom;
     bool recarregando, atirando;
     LineRenderer linhaDoLaser;
     GameObject luzColisao;
@@ -68,7 +68,7 @@ public class Tiros : MonoBehaviourPun, IPunObservable
         armas[armaInicial].objetoArma.SetActive(true);
         armas[armaInicial].lugarParticula.SetActive(true);
         armaAtual = armaInicial;
-        emissorSom = GetComponent<AudioSource>();
+        //emissorSom = GetComponent<AudioSource>();
         recarregando = atirando = false;
     }
 
@@ -78,7 +78,7 @@ public class Tiros : MonoBehaviourPun, IPunObservable
         BalasExtra.text = "BalasExtra: " + armas[armaAtual].balasExtra;
         BalasPente.text = "BalasNoPente: " + armas[armaAtual].balasNoPente;
         //troca de armas
-        if (Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")) > 0 && recarregando == false && atirando == false)
+        if (Mathf.Abs(Input.GetAxis("R")) > 0 && recarregando == false && atirando == false)
         {
             if (Input.GetAxis("R") > 0)
             {
@@ -103,8 +103,9 @@ public class Tiros : MonoBehaviourPun, IPunObservable
         {
             atirando = true;
             StartCoroutine(TempoTiro(armas[armaAtual].tempoPorTiro));
-            emissorSom.clip = armas[armaAtual].somTiro;
-            emissorSom.PlayOneShot(emissorSom.clip);
+            //emissorSom.clip = armas[armaAtual].somTiro;
+            //emissorSom.PlayOneShot(emissorSom.clip);
+            SoundManager.PlaySound(SoundManager.Sound.Boba1);
             armas[armaAtual].balasNoPente--;
             GameObject balaTemp = PhotonNetwork.Instantiate("Bullet", transform.position + transform.forward, transform.rotation);
             Destroy(balaTemp, 0.5f);
@@ -112,8 +113,8 @@ public class Tiros : MonoBehaviourPun, IPunObservable
         //recarregar
         if (Input.GetKeyDown(botaoRecarregar) && recarregando == false && atirando == false && (armas[armaAtual].balasNoPente < armas[armaAtual].balasPorPente) && (armas[armaAtual].balasExtra > 0))
         {
-            emissorSom.clip = armas[armaAtual].somRecarga;
-            emissorSom.PlayOneShot(emissorSom.clip);
+            //emissorSom.clip = armas[armaAtual].somRecarga;
+            //emissorSom.PlayOneShot(emissorSom.clip);
             int todasAsBalas = armas[armaAtual].balasNoPente + armas[armaAtual].balasExtra;
             if (todasAsBalas >= armas[armaAtual].balasPorPente)
             {

@@ -27,6 +27,7 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                     PhotonNetwork.Instantiate("Shield", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                    SoundManager.PlaySound(SoundManager.Sound.Conjurador1);
 
                 }
                 if (Input.GetKeyDown(KeyCode.R))
@@ -34,6 +35,7 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                     PhotonNetwork.Instantiate("Golem", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                    SoundManager.PlaySound(SoundManager.Sound.Conjurador2);
 
                 }
             }

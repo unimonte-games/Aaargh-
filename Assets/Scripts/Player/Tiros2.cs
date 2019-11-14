@@ -43,7 +43,7 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
     public Arma919[] armas;
     //
     int armaAtual;
-    AudioSource emissorSom;
+    //AudioSource emissorSom;
     bool recarregando, atirando;
     LineRenderer linhaDoLaser;
     GameObject luzColisao;
@@ -68,7 +68,7 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
             armas[armaInicial].objetoArma.SetActive(true);
             armas[armaInicial].lugarParticula.SetActive(true);
             armaAtual = armaInicial;
-            emissorSom = GetComponent<AudioSource>();
+            //emissorSom = GetComponent<AudioSource>();
             recarregando = atirando = false;
         }
     }
@@ -104,10 +104,11 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
             //atirar
             if (Input.GetButtonDown("Fire1") && armas[armaAtual].balasNoPente > 0 && recarregando == false && atirando == false)
             {
+                SoundManager.PlaySound(SoundManager.Sound.ArmaDefault);
                 atirando = true;
                 StartCoroutine(TempoTiro(armas[armaAtual].tempoPorTiro));
-                emissorSom.clip = armas[armaAtual].somTiro;
-                emissorSom.PlayOneShot(emissorSom.clip);
+                //emissorSom.clip = armas[armaAtual].somTiro;
+                //emissorSom.PlayOneShot(emissorSom.clip);
                 armas[armaAtual].balasNoPente--;
                 GameObject balaTemp = PhotonNetwork.Instantiate("Bullet", transform.position + transform.forward, transform.rotation);
                 Destroy(balaTemp, 0.5f);
@@ -115,8 +116,8 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
             //recarregar
             if (Input.GetKeyDown(botaoRecarregar) && recarregando == false && atirando == false && (armas[armaAtual].balasNoPente < armas[armaAtual].balasPorPente) && (armas[armaAtual].balasExtra > 0))
             {
-                emissorSom.clip = armas[armaAtual].somRecarga;
-                emissorSom.PlayOneShot(emissorSom.clip);
+                //emissorSom.clip = armas[armaAtual].somRecarga;
+                //emissorSom.PlayOneShot(emissorSom.clip);
                 int todasAsBalas = armas[armaAtual].balasNoPente + armas[armaAtual].balasExtra;
                 if (todasAsBalas >= armas[armaAtual].balasPorPente)
                 {
