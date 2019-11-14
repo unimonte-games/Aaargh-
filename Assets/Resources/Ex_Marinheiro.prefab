@@ -793,7 +793,7 @@ Transform:
   m_GameObject: {fileID: 6952870758342990532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.18217278, y: 0.179, z: -7.1757}
-  m_LocalScale: {x: 0.5694385, y: 0.5694385, z: 0.5694385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2412814895249758278}
   - {fileID: 189961898308142817}
@@ -833,7 +833,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!95 &9183230050859919895
 Animator:
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcea95a49bc6724c9847861a8072baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 1
+  velocidade: 10
   pv: {fileID: 5756362876978899616}
   raioRef: {fileID: 2412814895249758278}
   raioDist: 0
@@ -951,6 +951,8 @@ MonoBehaviour:
   Inimigos:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   cooldownTime: 3
+  imageCooldown: {fileID: 0}
+  imageCooldown2: {fileID: 0}
 --- !u!114 &1369136056377142758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,7 +1161,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 08e4890a664cbae4996c35c0d18fabdc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 08e4890a664cbae4996c35c0d18fabdc,
         type: 3}

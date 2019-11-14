@@ -443,6 +443,8 @@ MonoBehaviour:
   golem: {fileID: 5442079910116127434, guid: 49f12696563c4a04bab9effbbbb4ec59, type: 3}
   PosiInstantiate: {fileID: 6364743411971646337}
   cooldownTime: 1
+  imageCooldown: {fileID: 0}
+  imageCooldown2: {fileID: 0}
 --- !u!114 &3582177581100257879
 MonoBehaviour:
   m_ObjectHideFlags: 0
