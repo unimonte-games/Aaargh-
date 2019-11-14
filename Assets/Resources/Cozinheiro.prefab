@@ -830,8 +830,8 @@ MonoBehaviour:
   botaoRecarregar: 116
   armaInicial: 0
   TagInimigo: Inimigo
-  BalasPente: {fileID: 0}
-  BalasExtra: {fileID: 0}
+  BalasPente: {fileID: 4206025745652770617}
+  BalasExtra: {fileID: 4957847446652594123}
   armas:
   - balasExtra: 0
     balasNoPente: 0
