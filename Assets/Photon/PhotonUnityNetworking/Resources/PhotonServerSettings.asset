@@ -35,5 +35,6 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - RPC_AddCharacter
+  - PlaySound
   DisableAutoOpenWizard: 1
   ShowSettings: 0

@@ -23,6 +23,8 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
                     Debug.Log("Deu tiro");
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                    SoundManager.PlaySound(SoundManager.Sound.Boba2);
+
                 }
             }
         }

@@ -30,6 +30,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                     }
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                    SoundManager.PlaySound(SoundManager.Sound.Cozinheiro1);
+
                 }
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
                 if (Input.GetKeyDown(KeyCode.R))
@@ -37,6 +39,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                    SoundManager.PlaySound(SoundManager.Sound.Cozinheiro2);
 
                 }
             }
