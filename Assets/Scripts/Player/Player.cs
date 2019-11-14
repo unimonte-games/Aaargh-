@@ -1,4 +1,4 @@
-﻿using Photon.Pun;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -109,7 +109,7 @@ public class Player : MonoBehaviourPun, IPunObservable
             {
                 vida -= 10;
                 healthBar.fillAmount = vida / 100;
-                SoundManager.PlaySound(SoundManager.Sound.HitDoInimigo);
+                
 
             }
             if (collision.gameObject.tag == "Ground")
@@ -146,7 +146,7 @@ public class Player : MonoBehaviourPun, IPunObservable
         {
             anim.SetBool("Andando", false);
         }
-        SoundManager.PlaySound(SoundManager.Sound.Passos);
+        
     }
     void Jump()
     {
