@@ -8,7 +8,7 @@ public class TrocaCame : MonoBehaviour
     public GameObject cameradbarco;
     public GameObject[] player;
     public GameObject pdnotimao;
-    public GameObject cameraplayer;
+    public GameObject[] cameraplayer;
     public bool ontimao;
 
     public void Start()
@@ -25,12 +25,13 @@ public class TrocaCame : MonoBehaviour
             barco.GetComponent<Rigidbody>().isKinematic = false;
             barco.GetComponent<WaterBoat>().enabled = true;
             cameradbarco.SetActive(true);
-            cameraplayer.SetActive(false);
             TimaoOn();
             for (int i = 0; i < player.Length; i++)
             {
                 player[i].SetActive(false);
                 player[i].transform.position = pdnotimao.transform.position;
+                cameraplayer[i].SetActive(false);
+
             }
 
         }
@@ -38,18 +39,19 @@ public class TrocaCame : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.X))
         {
             //terceira pessoa
             barco.GetComponent<Rigidbody>().isKinematic = true;
             barco.GetComponent<WaterBoat>().enabled = false;
             cameradbarco.SetActive(false);
-            cameraplayer.SetActive(true);
             ontimao = false;
             for (int i = 0; i < player.Length; i++)
             {
                 player[i].SetActive(true);
                 player[i].transform.position = pdnotimao.transform.position;
+                cameraplayer[i].SetActive(true);
+
             }
         }
     }

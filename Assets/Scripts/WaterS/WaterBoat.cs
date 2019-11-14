@@ -1,4 +1,5 @@
 ﻿using Ditzelgames;
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ public class WaterBoat : MonoBehaviour
     {
         if(collision.gameObject.Equals ("IlhaFeiticeiro"))
         {
-            SceneManager.LoadScene("Lobby");
+            PhotonNetwork.LoadLevel("IlhaFeiticeiro");
         }
     }
     public void FixedUpdate()
