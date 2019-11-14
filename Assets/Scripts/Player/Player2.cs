@@ -114,6 +114,14 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             {
                 IsGrounded = true;
             }
+            if(collision.gameObject.tag == "CasaFeiticeiro")
+            {
+                PhotonNetwork.LoadLevel(4);
+            }
+            if(collision.gameObject.tag == "MudaScene")
+            {
+                PhotonNetwork.LoadLevel(3);
+            }
         }
     }
     void OnCollisionExit2D(Collision2D collision)
