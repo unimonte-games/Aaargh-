@@ -74,6 +74,7 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     void StartGame()
     {
         Debug.Log("Loading Level");
+        if(PhotonNetwork.IsMasterClient)
         PhotonNetwork.LoadLevel(multiplayerScene);
     }
 
@@ -90,4 +91,5 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         //creates player network controller but not player character
         PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonNetworkPlayer"), transform.position, Quaternion.identity, 0);
     }
+
 }

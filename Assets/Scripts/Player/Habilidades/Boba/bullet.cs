@@ -15,7 +15,7 @@ public class bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Player p = collision.gameObject.GetComponent<Player>();
+            Player2 p = collision.gameObject.GetComponent<Player2>();
             p.vida -= 10;
         }
         else if (collision.gameObject.tag == "Inimigo")

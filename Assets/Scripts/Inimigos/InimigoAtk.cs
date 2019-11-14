@@ -27,7 +27,7 @@ public class InimigoAtk : MonoBehaviour
         if (Atack == true)
         {
             StartCoroutine("TempoDAtaque");
-            player.GetComponent<Player>().vida -= 10;
+            player.GetComponent<Player2>().vida -= 10;
             SoundManager.PlaySound(SoundManager.Sound.Praga);
         }
     }
