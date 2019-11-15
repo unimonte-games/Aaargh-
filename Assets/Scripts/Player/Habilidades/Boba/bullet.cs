@@ -20,11 +20,6 @@ public class bullet : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Inimigo")
         {
-            IA p = collision.gameObject.GetComponent<IA>();
-            p.vida -= 10;
-        }
-        else if (collision.gameObject.tag == "Inimigo")
-        {
             IAPRAGA p = collision.gameObject.GetComponent<IAPRAGA>();
             p.vida -= 10 ;
         }

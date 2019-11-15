@@ -23,7 +23,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
 
     [Header("Unity Stuff")]
     public Image healthBar;
-    private bool IsGrounded = false;
+    public bool IsGrounded;
 
     void Awake()
     {
@@ -46,6 +46,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             {
                 // reseta rotação para que a função Translate não nos faça voar
                 meu_transform.rotation = Quaternion.Euler(0, meu_transform.localEulerAngles.y, 0);
+
                 Moviment();
 
                 // define eixos usando entrada do usuário

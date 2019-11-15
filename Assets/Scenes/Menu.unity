@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -375,6 +375,79 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177950686}
+  m_CullTransparentMesh: 0
+--- !u!1 &270495098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270495099}
+  - component: {fileID: 270495101}
+  - component: {fileID: 270495100}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &270495099
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270495098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5963, y: 2.5963, z: 2.5963}
+  m_Children: []
+  m_Father: {fileID: 1039118336}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28.000015, y: 24.899998}
+  m_SizeDelta: {x: 522.6, y: 349.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &270495100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270495098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 809129dd9d1f75940a5f52c195900288, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &270495101
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270495098}
   m_CullTransparentMesh: 0
 --- !u!1 &274254943
 GameObject:
@@ -806,12 +879,12 @@ RectTransform:
   m_Children:
   - {fileID: 2073057688}
   m_Father: {fileID: 1039118336}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 500, y: 100}
+  m_AnchoredPosition: {x: 28, y: -86}
+  m_SizeDelta: {x: 724.1, y: 167.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1039118332
 GameObject:
@@ -903,6 +976,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 270495099}
   - {fileID: 1038125397}
   - {fileID: 1394123957}
   m_Father: {fileID: 0}
@@ -966,7 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 1
-  multiplayer1: 2
+  multiplayer1: 4
   multiplayer2: 3
   multiplayer3: 4
 --- !u!4 &1142986553
@@ -1016,12 +1090,12 @@ RectTransform:
   - {fileID: 2116198087}
   - {fileID: 108036913}
   m_Father: {fileID: 1039118336}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -57.899994}
-  m_SizeDelta: {x: 458, y: 100}
+  m_AnchoredPosition: {x: -91.89999, y: -278.09998}
+  m_SizeDelta: {x: 663.2, y: 167.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394123958
 MonoBehaviour:
@@ -1170,7 +1244,7 @@ MonoBehaviour:
   delayStart: 0
   maxPlayers: 4
   menuScene: 1
-  multiplayerScene: 2
+  multiplayerScene: 4
 --- !u!4 &1561561933
 Transform:
   m_ObjectHideFlags: 0

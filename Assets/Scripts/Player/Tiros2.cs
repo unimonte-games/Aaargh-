@@ -110,7 +110,7 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
                 //emissorSom.clip = armas[armaAtual].somTiro;
                 //emissorSom.PlayOneShot(emissorSom.clip);
                 armas[armaAtual].balasNoPente--;
-                GameObject balaTemp = PhotonNetwork.Instantiate("Bullet", transform.position + transform.forward, transform.rotation);
+                GameObject balaTemp = PhotonNetwork.Instantiate("Bala", transform.position + transform.forward, transform.rotation);
                 Destroy(balaTemp, 0.5f);
             }
             //recarregar

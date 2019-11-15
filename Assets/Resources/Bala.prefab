@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: -2342883248738392350}
   - component: {fileID: 6614892438909858298}
   - component: {fileID: 8769698125420667061}
+  - component: {fileID: 6405074450034500949}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Bala
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +32,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2236990986407660271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.093258, y: 0.46857, z: -0.611}
-  m_LocalScale: {x: 0.17995, y: 0.17995, z: 0.17995}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -131,6 +132,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 6614892438909858298}
+  - {fileID: 6405074450034500949}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -162,3 +164,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.40919623
   m_Center: {x: -0.3, y: 2.2954855, z: -0.30997795}
+--- !u!114 &6405074450034500949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236990986407660271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
