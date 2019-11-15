@@ -14,7 +14,9 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
 
     //public bool isGameLoaded;
     public int currentScene;
-    public int multiplayerScene;
+    public int multiplayer1;
+    public int multiplayer2;
+    public int multiplayer3;
 
     //Player info
     //Player[] photonPlayers;
@@ -74,18 +76,32 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     void StartGame()
     {
         Debug.Log("Loading Level");
-        if(PhotonNetwork.IsMasterClient)
-        PhotonNetwork.LoadLevel(multiplayerScene);
+        if (PhotonNetwork.IsMasterClient) {
+        PhotonNetwork.LoadLevel(multiplayer1);
+            }
     }
 
     void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         currentScene = scene.buildIndex;
-        if(currentScene == multiplayerScene)
+        if(currentScene == multiplayer1)
+        {
+            CreatePlayer();
+        }
+
+        currentScene = scene.buildIndex;
+        if (currentScene == multiplayer2)
+        {
+            CreatePlayer();
+        }
+
+        currentScene = scene.buildIndex;
+        if (currentScene == multiplayer3)
         {
             CreatePlayer();
         }
     }
+    
     private void CreatePlayer()
     {
         //creates player network controller but not player character

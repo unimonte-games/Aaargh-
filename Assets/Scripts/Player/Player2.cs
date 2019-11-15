@@ -18,12 +18,12 @@ public class Player2 : MonoBehaviourPun, IPunObservable
     public int vida = 100;
     public GameObject[] inimigo;
     public Animator anim;
-    public float jumpforce = 100f;
+    public float jumpforce = 5f;
     public Rigidbody rb;
 
     [Header("Unity Stuff")]
     public Image healthBar;
-    private bool IsGrounded;
+    private bool IsGrounded = false;
 
     void Awake()
     {

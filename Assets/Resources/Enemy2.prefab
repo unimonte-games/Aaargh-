@@ -66,7 +66,7 @@ MonoBehaviour:
   retreatDistance: 2
   player: {fileID: 5369543661134389077, guid: 206942261c6d55e4e959d5a62bbcba4b, type: 3}
   alvo: {fileID: 5369543661134389077, guid: 206942261c6d55e4e959d5a62bbcba4b, type: 3}
-  vida: 100
+  vida: -200
 --- !u!114 &8270425458652378555
 MonoBehaviour:
   m_ObjectHideFlags: 0

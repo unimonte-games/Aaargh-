@@ -966,7 +966,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 1
-  multiplayerScene: 2
+  multiplayer1: 2
+  multiplayer2: 3
+  multiplayer3: 4
 --- !u!4 &1142986553
 Transform:
   m_ObjectHideFlags: 0
