@@ -105,10 +105,10 @@ public class Tiros : MonoBehaviourPun, IPunObservable
             StartCoroutine(TempoTiro(armas[armaAtual].tempoPorTiro));
             //emissorSom.clip = armas[armaAtual].somTiro;
             //emissorSom.PlayOneShot(emissorSom.clip);
-            SoundManager.PlaySound(SoundManager.Sound.Boba1);
+            //SoundManager.PlaySound(SoundManager.Sound.Boba1);
             armas[armaAtual].balasNoPente--;
-            GameObject balaTemp = PhotonNetwork.Instantiate("Bullet", transform.position + transform.forward, transform.rotation);
-            Destroy(balaTemp, 0.5f);
+            GameObject balaTemp = PhotonNetwork.Instantiate("Bala", transform.position + transform.forward, transform.rotation);
+            Destroy(balaTemp, 1.0f);
         }
         //recarregar
         if (Input.GetKeyDown(botaoRecarregar) && recarregando == false && atirando == false && (armas[armaAtual].balasNoPente < armas[armaAtual].balasPorPente) && (armas[armaAtual].balasExtra > 0))

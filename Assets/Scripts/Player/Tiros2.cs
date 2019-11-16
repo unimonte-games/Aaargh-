@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using Photon.Pun;
+using System.IO;
 
 [Serializable]
 public class LaserOuMira2
@@ -49,6 +50,7 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
     GameObject luzColisao;
 
     public GameObject bullet;
+    public Transform lugardotiro;
 
     void Start()
     {
@@ -102,22 +104,18 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
                 AtivarArmaAtual();
             }
             //atirar
-            if (Input.GetButtonDown("Fire1") && armas[armaAtual].balasNoPente > 0 && recarregando == false && atirando == false)
+            //if (Input.GetButtonDown("Fire1") && armas[armaAtual].balasNoPente > 0 && recarregando == false && atirando == false)
+            if (Input.GetMouseButton(0) && armas[armaAtual].balasNoPente > 0 && recarregando == false && atirando == false)
             {
-                SoundManager.PlaySound(SoundManager.Sound.ArmaDefault);
+                GameObject balaTemp = PhotonNetwork.Instantiate("Bala", lugardotiro.position, Quaternion.identity);
                 atirando = true;
                 StartCoroutine(TempoTiro(armas[armaAtual].tempoPorTiro));
-                //emissorSom.clip = armas[armaAtual].somTiro;
-                //emissorSom.PlayOneShot(emissorSom.clip);
                 armas[armaAtual].balasNoPente--;
-                GameObject balaTemp = PhotonNetwork.Instantiate("Bala", transform.position + transform.forward, transform.rotation);
-                Destroy(balaTemp, 0.5f);
+                Destroy(balaTemp, 5f);
             }
             //recarregar
             if (Input.GetKeyDown(botaoRecarregar) && recarregando == false && atirando == false && (armas[armaAtual].balasNoPente < armas[armaAtual].balasPorPente) && (armas[armaAtual].balasExtra > 0))
             {
-                //emissorSom.clip = armas[armaAtual].somRecarga;
-                //emissorSom.PlayOneShot(emissorSom.clip);
                 int todasAsBalas = armas[armaAtual].balasNoPente + armas[armaAtual].balasExtra;
                 if (todasAsBalas >= armas[armaAtual].balasPorPente)
                 {

@@ -23,6 +23,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
 
     [Header("Unity Stuff")]
     public Image healthBar;
+
     public bool IsGrounded;
 
     void Awake()
@@ -47,7 +48,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
                 // reseta rotação para que a função Translate não nos faça voar
                 meu_transform.rotation = Quaternion.Euler(0, meu_transform.localEulerAngles.y, 0);
 
-                Moviment();
+                
 
                 // define eixos usando entrada do usuário
                 deltaMovimento.x = Input.GetAxis("Horizontal");
@@ -66,6 +67,14 @@ public class Player2 : MonoBehaviourPun, IPunObservable
                 if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
                 {
                     Jump();
+                }
+                if (Input.GetButtonDown("Horizontal"))
+                {
+                    Moviment();
+                }
+                if (Input.GetButtonDown("Vertical"))
+                {
+                    Moviment();
                 }
             }
             // acompanhar chão
@@ -140,6 +149,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector3 moviment = new Vector3(x, y);
+        Debug.Log("Funfando");
         if (moviment == Vector3.zero)
         {
             anim.SetBool("Andando", true);

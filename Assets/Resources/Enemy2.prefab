@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8270425458652378554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.858, y: 0.5, z: -9.36}
+  m_LocalPosition: {x: 9.858, y: 0.5, z: -29.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7297003400954593160}
@@ -74,7 +74,7 @@ MonoBehaviour:
   - {fileID: 8987445606809835217, guid: c26a6d09bc9f7c74d92d3ef60cb8989a, type: 3}
   - {fileID: 3325322322322401521, guid: 7dc8a712cd9b75c41ab6758085abe070, type: 3}
   - {fileID: 4403775199530103808, guid: 6593cb088bb0fd84b849a241508e1060, type: 3}
-  vida: 100
+  vida: -730
 --- !u!114 &8270425458652378555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +137,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8270425458652378176}
     m_Modifications:
+    - target: {fileID: 6119853472089185164, guid: 630673f8c5688fe499e63da3bc2bb4af,
+        type: 3}
+      propertyPath: m_Name
+      value: Inimigo_Praga
+      objectReference: {fileID: 0}
     - target: {fileID: 7112678692547455391, guid: 630673f8c5688fe499e63da3bc2bb4af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,11 +211,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 244.21446
-      objectReference: {fileID: 0}
-    - target: {fileID: 6119853472089185164, guid: 630673f8c5688fe499e63da3bc2bb4af,
-        type: 3}
-      propertyPath: m_Name
-      value: Inimigo_Praga
       objectReference: {fileID: 0}
     - target: {fileID: 2182544076840848358, guid: 630673f8c5688fe499e63da3bc2bb4af,
         type: 3}

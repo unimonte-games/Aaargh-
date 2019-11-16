@@ -14,7 +14,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     public float cooldownTime = 1;
     public Image imageCooldown;
     public Image imageCooldown2;
-
+    public ParticleSystem particula;
     private float nextFireTime = 0;
     void Update()
     {
@@ -30,7 +30,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                     }
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Cozinheiro1);
+                    //SoundManager.PlaySound(SoundManager.Sound.Cozinheiro1);
 
                 }
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
@@ -39,7 +39,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Cozinheiro2);
+                    //SoundManager.PlaySound(SoundManager.Sound.Cozinheiro2);
 
                 }
             }
@@ -50,6 +50,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     {
         GBJ.GetComponent<Player2>().vida += 9;
         GBJ.GetComponent<Player2>().healthBar.fillAmount += 9;
+        particula.Play();
     }
     //Randomizacao dos itens 
     void IRandom()

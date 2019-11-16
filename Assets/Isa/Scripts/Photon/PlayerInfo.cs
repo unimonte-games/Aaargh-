@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public static PlayerInfo PI;
+    //public static PlayerInfo PI;
 
-    public int mySelectedCharacter;
+    public static int mySelectedCharacter;
 
     public GameObject[] allCharacters;
 
     private void OnEnable()
     {
-        if (PlayerInfo.PI == null)
-        {
-            PlayerInfo.PI = this;
-        }
-        else
-        {
-            if(PlayerInfo.PI != this)
-            {
-                Destroy(PlayerInfo.PI.gameObject);
-                PlayerInfo.PI = this;
-            }
-        }
+        //if (PlayerInfo.PI == null)
+        //{
+        //    PlayerInfo.PI = this;
+        //}
+        //else
+        //{
+        //    if(PlayerInfo.PI != this)
+        //    {
+        //        Destroy(PlayerInfo.PI.gameObject);
+        //        PlayerInfo.PI = this;
+        //    }
+        //}
     }
     // Start is called before the first frame update
     void Start()
