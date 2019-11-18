@@ -30,7 +30,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &87057101680091702
 Transform:
   m_ObjectHideFlags: 0
@@ -93,6 +93,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87057101680091702}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 06de6a7410811c048b235cab43a1ddb8,
+        type: 3}
+      propertyPath: m_Name
+      value: Caixa distracao-3
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 06de6a7410811c048b235cab43a1ddb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -148,11 +153,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 06de6a7410811c048b235cab43a1ddb8,
-        type: 3}
-      propertyPath: m_Name
-      value: Caixa distracao-3
-      objectReference: {fileID: 0}
     - target: {fileID: -2416733968201007103, guid: 06de6a7410811c048b235cab43a1ddb8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -173,6 +173,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87057101680091702}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 6d611b3e4dc2b6f4f883692d71eb1b56,
+        type: 3}
+      propertyPath: m_Name
+      value: Caixa distracao-0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d611b3e4dc2b6f4f883692d71eb1b56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,11 +233,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 6d611b3e4dc2b6f4f883692d71eb1b56,
-        type: 3}
-      propertyPath: m_Name
-      value: Caixa distracao-0
-      objectReference: {fileID: 0}
     - target: {fileID: -2416733968201007103, guid: 6d611b3e4dc2b6f4f883692d71eb1b56,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -253,6 +253,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87057101680091702}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 01a8a088fdb55a84083c02758be4f898,
+        type: 3}
+      propertyPath: m_Name
+      value: Caixa distracao-2
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 01a8a088fdb55a84083c02758be4f898,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,11 +312,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 01a8a088fdb55a84083c02758be4f898,
-        type: 3}
-      propertyPath: m_Name
-      value: Caixa distracao-2
       objectReference: {fileID: 0}
     - target: {fileID: -2416733968201007103, guid: 01a8a088fdb55a84083c02758be4f898,
         type: 3}
@@ -333,6 +333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87057101680091702}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 3aef97ebf0f3e204a91e3e2c802812f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Caixa distracao-1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3aef97ebf0f3e204a91e3e2c802812f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,11 +392,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 3aef97ebf0f3e204a91e3e2c802812f7,
-        type: 3}
-      propertyPath: m_Name
-      value: Caixa distracao-1
       objectReference: {fileID: 0}
     - target: {fileID: -2416733968201007103, guid: 3aef97ebf0f3e204a91e3e2c802812f7,
         type: 3}

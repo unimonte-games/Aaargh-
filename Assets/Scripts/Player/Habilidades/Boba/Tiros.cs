@@ -15,7 +15,6 @@ public class Arma919
 {
     [HideInInspector]
     public int balasExtra, balasNoPente;
-    //
     public int danoPorTiro = 40;
     [Range(0, 500)]
     public int numeroDeBalas = 240;
@@ -31,9 +30,7 @@ public class Arma919
     public GameObject objetoArma;
     public GameObject lugarParticula;
     public GameObject particulaFogo;
-    //public AudioClip somTiro, somRecarga;
 }
-[RequireComponent(typeof(AudioSource))]
 public class Tiros : MonoBehaviourPun, IPunObservable
 {
 
@@ -42,9 +39,7 @@ public class Tiros : MonoBehaviourPun, IPunObservable
     public string TagInimigo = "Inimigo";
     public Text BalasPente, BalasExtra;
     public Arma919[] armas;
-    //
     int armaAtual;
-    //AudioSource emissorSom;
     bool recarregando, atirando;
     LineRenderer linhaDoLaser;
     GameObject luzColisao;

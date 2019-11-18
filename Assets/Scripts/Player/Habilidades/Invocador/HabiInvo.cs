@@ -14,7 +14,8 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
     public Image imageCooldown2;
 
     private float nextFireTime = 0;
-    
+    public Animator anim;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +25,7 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    anim.SetBool("Skill", true);
                     PhotonNetwork.Instantiate("Shield", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
@@ -32,6 +34,7 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                 }
                 if (Input.GetKeyDown(KeyCode.R))
                 {
+                    anim.SetBool("SkillII", true);
                     PhotonNetwork.Instantiate("Golem", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;

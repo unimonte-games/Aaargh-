@@ -105,9 +105,9 @@ public class Player2 : MonoBehaviourPun, IPunObservable
     {
         if (photonView.IsMine)
         {
-            PhotonNetwork.LoadLevel("GameOver");//Fazer cena para morto
-
+            PhotonNetwork.LoadLevel(4);//Fazer cena para morto
             vida += 100;
+            anim.SetBool("Death", true);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -155,9 +155,6 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             anim.SetBool("Andando", true);
             anim.SetFloat("Ver", y);
             anim.SetFloat("Hor", x);
-            anim.SetBool("Skill", true);
-            anim.SetBool("SkillII", true);
-            anim.SetBool("Death", true);
         }
         else
         {

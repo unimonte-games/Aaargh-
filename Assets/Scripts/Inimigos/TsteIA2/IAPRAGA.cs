@@ -62,6 +62,14 @@ public class IAPRAGA : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Shield")
+        {
+            StartCoroutine("Morrer");
+
+        }
+    }
     IEnumerator Morrer()
     {
         GetComponentInChildren<MeshRenderer>().material.color = Color.red;

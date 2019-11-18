@@ -16,6 +16,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     public Image imageCooldown2;
     public ParticleSystem particula;
     private float nextFireTime = 0;
+    public Animator anim;
+
     void Update()
     {
         if (photonView.IsMine)
@@ -24,6 +26,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    anim.SetBool("Skill", true);
                     for (int i = 0; i < players.Count; i++)
                     {
                         BUFF(players[i]);
@@ -36,6 +39,7 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
                 if (Input.GetKeyDown(KeyCode.R))
                 {
+                    anim.SetBool("SkillII", true);
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;

@@ -33,7 +33,6 @@ public class Arma9192
     public GameObject lugarParticula;
     public GameObject particulaFogo;
 }
-[RequireComponent(typeof(AudioSource))]
 public class Tiros2 : MonoBehaviourPun, IPunObservable
 {
 
@@ -42,7 +41,6 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
     public string TagInimigo = "Inimigo";
     public Text BalasPente, BalasExtra;
     public Arma919[] armas;
-    //
     int armaAtual;
     //AudioSource emissorSom;
     bool recarregando, atirando;

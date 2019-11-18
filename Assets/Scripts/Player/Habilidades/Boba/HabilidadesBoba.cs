@@ -11,6 +11,7 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
     public Transform PosiInstantiate;
     private float nextFireTime = 0;
     public Image imageCooldown;
+    public Animator anim;
     void Update()
     {
         if (photonView.IsMine)
@@ -19,6 +20,7 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
             {
                 if (Input.GetKeyUp(KeyCode.E))
                 {
+                    anim.SetBool("Skill", true);
                     Caixa();
                     Debug.Log("Deu tiro");
                     nextFireTime = Time.time + cooldownTime;

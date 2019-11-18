@@ -11,6 +11,7 @@ public class HabParu : MonoBehaviourPun, IPunObservable
 
     public float cooldownTime = 1;
     public Image imageCooldown;
+    public Animator anim;
     public Image imageCooldown2;
 
     private float nextFireTime = 0;
@@ -22,6 +23,7 @@ public class HabParu : MonoBehaviourPun, IPunObservable
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    anim.SetBool("Skill", true);
                     for (int i = 0; i < Inimigos.Count; i++)
                     {
                         PalmaDMorte(Inimigos[i]);
@@ -32,6 +34,7 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                 }
                 if (Input.GetKeyDown(KeyCode.Y))
                 {
+                    anim.SetBool("SkillII", true);
                     for (int i = 0; i < Inimigos.Count; i++)
                     {
                         Contadordevida(Inimigos[i]);

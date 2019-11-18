@@ -6,6 +6,7 @@ public class Painels : MonoBehaviour
 {
     public GameObject painels;
     public GameObject fechar;
+    public GameObject barco;
     public void Abrir()
     {
         painels.SetActive(true);
@@ -16,5 +17,7 @@ public class Painels : MonoBehaviour
         painels.SetActive(false);
         fechar.SetActive(false);
     }
+
     
+
 }
