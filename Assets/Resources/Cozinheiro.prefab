@@ -591,10 +591,10 @@ GameObject:
   - component: {fileID: 7801508330546836651}
   - component: {fileID: 6108372058532278256}
   - component: {fileID: 9202031979916043515}
+  - component: {fileID: 7287276875009396682}
   - component: {fileID: 1427510180774455942}
   - component: {fileID: 7230136247671123783}
   - component: {fileID: 227946556135163588}
-  - component: {fileID: 7287276875009396682}
   - component: {fileID: 4054654427830217568}
   - component: {fileID: 7381476227364845578}
   m_Layer: 0
@@ -652,7 +652,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!95 &6108372058532278256
 Animator:
@@ -694,10 +694,39 @@ MonoBehaviour:
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 6108372058532278256}
-  jumpforce: 40
+  jumpforce: 50
   rb: {fileID: 7801508330546836651}
   healthBar: {fileID: 6461583254554899248}
   IsGrounded: 0
+--- !u!114 &7287276875009396682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461071981140139811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d56836ef7735c4b8774d894a8e2c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 812341107168658963, guid: 6593cb088bb0fd84b849a241508e1060, type: 3}
+  - {fileID: 1825533628311789827, guid: 7dc8a712cd9b75c41ab6758085abe070, type: 3}
+  - {fileID: 5461071981140139811}
+  - {fileID: 5111445683089950331, guid: 306a1a8f758bf6640a6bb79e0bfbfd46, type: 3}
+  objetos:
+  - {fileID: 9133247874792340812, guid: d39360cf8f4ea6345a793057efa7c0f0, type: 3}
+  - {fileID: 9133247874792340812, guid: d39360cf8f4ea6345a793057efa7c0f0, type: 3}
+  PosiInstantiate: {fileID: 776911929383607713}
+  objN: 1
+  objC: 1
+  cooldownTime: 3
+  imageCooldown: {fileID: 6163194003524210647}
+  imageCooldown2: {fileID: 9020018018015869728}
+  particula: {fileID: 215790211202464800, guid: f718b4148b242884a9b233e6001fb52b,
+    type: 3}
+  anim: {fileID: 6108372058532278256}
 --- !u!82 &1427510180774455942
 AudioSource:
   m_ObjectHideFlags: 0
@@ -832,34 +861,6 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
---- !u!114 &7287276875009396682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5461071981140139811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d56836ef7735c4b8774d894a8e2c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  players:
-  - {fileID: 3022283531857436243, guid: c3a84bcdbf9db504b8f656c1e6cbde63, type: 3}
-  - {fileID: 1825533628311789827, guid: 7dc8a712cd9b75c41ab6758085abe070, type: 3}
-  - {fileID: 5461071981140139811}
-  - {fileID: 6952870758342990532, guid: 7ac06aed5a14c88468e25d0669bf27bf, type: 3}
-  objetos:
-  - {fileID: 6730584737649660473, guid: 507058ffdb5993c46b2a1a41a56abc5a, type: 3}
-  - {fileID: 6730584737649660473, guid: 507058ffdb5993c46b2a1a41a56abc5a, type: 3}
-  PosiInstantiate: {fileID: 776911929383607713}
-  objN: 0
-  objC: 1
-  cooldownTime: 3
-  imageCooldown: {fileID: 6163194003524210647}
-  imageCooldown2: {fileID: 9020018018015869728}
-  particula: {fileID: 215790211202464800, guid: f718b4148b242884a9b233e6001fb52b,
-    type: 3}
 --- !u!114 &4054654427830217568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,12 +1335,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7561167
       objectReference: {fileID: 0}
-    - target: {fileID: -4097746464622749797, guid: c14c6cbf58fa6654ab7a23a3678943f1,
+    - target: {fileID: -1504981713932161579, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
-    - target: {fileID: -1504981713932161579, guid: c14c6cbf58fa6654ab7a23a3678943f1,
+    - target: {fileID: -4097746464622749797, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

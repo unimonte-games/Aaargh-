@@ -555,8 +555,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622464814111897772}
-  m_LocalRotation: {x: -0.7071067, y: -0.000000042146848, z: 0.00000004214685, w: 0.7071068}
-  m_LocalPosition: {x: 7.121689, y: 3.2658486, z: 2.0694473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.76, y: 3.2658486, z: 7.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4403775199530103808}
@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 4541542057623828294}
   - component: {fileID: 5392226226018551605}
   - component: {fileID: 4999105485191811498}
+  - component: {fileID: 1822005539605408571}
   m_Layer: 0
   m_Name: Boba da corte
   m_TagString: Untagged
@@ -646,7 +647,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 6417737326721440593}
-  - {fileID: 0}
+  - {fileID: 1822005539605408571}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -714,7 +715,7 @@ MonoBehaviour:
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 5392226226018551605}
-  jumpforce: 40
+  jumpforce: 50
   rb: {fileID: 4541542057623828294}
   healthBar: {fileID: 935645051}
   IsGrounded: 0
@@ -830,6 +831,7 @@ MonoBehaviour:
   prefab: {fileID: 6730584737649660473, guid: 507058ffdb5993c46b2a1a41a56abc5a, type: 3}
   PosiInstantiate: {fileID: 4364618136750576478}
   imageCooldown: {fileID: 2652457013237599297}
+  anim: {fileID: 5392226226018551605}
 --- !u!114 &6417737326721440593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +861,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!95 &5392226226018551605
 Animator:
@@ -913,6 +915,22 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
+--- !u!114 &1822005539605408571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812341107168658963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &1489853976792191028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3273673891676164024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92, y: -0.09, z: 0}
+  m_LocalPosition: {x: -0.92, y: 0.02, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8054680432143019249}
@@ -2096,7 +2114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8676165958513234009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.1, y: 0, z: 0}
+  m_LocalPosition: {x: 4.68, y: 0, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4403775199530103808}
@@ -2274,6 +2292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tiro
+      objectReference: {fileID: 0}
+    - target: {fileID: 32566675906681298, guid: 838afac312dcb1f4d952337aa349b4ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2826534094230247642, guid: 838afac312dcb1f4d952337aa349b4ce,
         type: 3}

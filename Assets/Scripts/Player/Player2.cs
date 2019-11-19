@@ -10,7 +10,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
     public float velocidade;
     public PhotonView pv;
 
-    // otimização :3 (evita coleta de lixo desnecessário)
+    //Otimização :3 (evita coleta de lixo desnecessário)
     Vector3 deltaMovimento = Vector3.zero;
     public Transform raioRef;
     public float raioDist, chaoDist;
@@ -146,20 +146,22 @@ public class Player2 : MonoBehaviourPun, IPunObservable
     }
     private void Moviment()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        Vector3 moviment = new Vector3(x, y);
-        Debug.Log("Funfando");
-        if (moviment == Vector3.zero)
-        {
-            anim.SetBool("Andando", true);
-            anim.SetFloat("Ver", y);
-            anim.SetFloat("Hor", x);
-        }
-        else
-        {
-            anim.SetBool("Andando", false);
-        }
+        anim.SetBool("Andando", true);
+
+        //float x = Input.GetAxis("Horizontal");
+        //float y = Input.GetAxis("Vertical");
+        //Vector3 moviment = new Vector3(x, y);
+        //Debug.Log("Funfando");
+        //if (moviment == Vector3.zero)
+        //{
+        //    anim.SetBool("Andando", true);
+        //    anim.SetFloat("Ver", y);
+        //    anim.SetFloat("Hor", x);
+        //}
+        //else
+        //{
+        //    anim.SetBool("Andando", false);
+        //}
 
     }
     void Jump()

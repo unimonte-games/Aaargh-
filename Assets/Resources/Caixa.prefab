@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 87057101680091702}
   - component: {fileID: 7096988526787758981}
   - component: {fileID: 5002466982587362218}
+  - component: {fileID: 2448214737780669040}
   m_Layer: 0
   m_Name: Caixa
   m_TagString: Untagged
@@ -86,6 +87,18 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &2448214737780669040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730584737649660473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa572d3a9569605429bcb323b9810936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &680650485718743236
 PrefabInstance:
   m_ObjectHideFlags: 0
