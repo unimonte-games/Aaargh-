@@ -9,6 +9,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     public static PhotonLobby lobby;
 
     public GameObject playButton;
+    public GameObject cancelButton;
 
     private void Awake()
     {
@@ -28,8 +29,9 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
 
     public void OnPlayButtonClicked()
     {
-        Debug.Log("Play Button was click");
+        Debug.Log("Play Button was clicked");
         playButton.SetActive(false);
+        cancelButton.SetActive(true);
         PhotonNetwork.JoinRandomRoom();
     }
 
@@ -59,6 +61,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
 
     public void OnCancelButtonClicked()
     {
+        cancelButton.SetActive(false);
         playButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
     }

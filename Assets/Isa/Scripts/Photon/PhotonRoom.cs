@@ -89,14 +89,12 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
             CreatePlayer();
         }
 
-        currentScene = scene.buildIndex;
-        if (currentScene == multiplayer2)
+        else if (currentScene == multiplayer2)
         {
             CreatePlayer();
         }
 
-        currentScene = scene.buildIndex;
-        if (currentScene == multiplayer3)
+        else if (currentScene == multiplayer3)
         {
             CreatePlayer();
         }
