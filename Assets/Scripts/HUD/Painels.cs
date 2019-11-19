@@ -5,13 +5,19 @@ using UnityEngine;
 public class Painels : MonoBehaviour
 {
     public GameObject painels;
-    private void OnCollisionEnter(Collision collision)
+    public GameObject fechar;
+    public GameObject barco;
+    public void Abrir()
     {
         painels.SetActive(true);
+        fechar.SetActive(true);
     }
-    private void OnCollisionExit(Collision collision)
+    public void Fechar()
     {
         painels.SetActive(false);
+        fechar.SetActive(false);
     }
+
     
+
 }

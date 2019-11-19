@@ -37,7 +37,7 @@ public class WaterBoat : MonoBehaviour
     {
         if(collision.gameObject.Equals ("IlhaFeiticeiro"))
         {
-            PhotonNetwork.LoadLevel("IlhaFeiticeiro");
+            PhotonNetwork.LoadLevel(1);
         }
     }
     public void FixedUpdate()

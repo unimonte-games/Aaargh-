@@ -30,7 +30,7 @@ public class Shooter2 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             DestroyProjectile();
-            player.GetComponent<Player>().vida -= 10;
+            player.GetComponent<Player2>().vida -= 10;
         }
         if (other.gameObject.name== "Shield")
         {

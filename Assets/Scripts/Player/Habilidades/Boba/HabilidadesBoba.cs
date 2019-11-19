@@ -11,6 +11,7 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
     public Transform PosiInstantiate;
     private float nextFireTime = 0;
     public Image imageCooldown;
+    public Animator anim;
     void Update()
     {
         if (photonView.IsMine)
@@ -19,12 +20,14 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
             {
                 if (Input.GetKeyUp(KeyCode.E))
                 {
+                    //anim.SetBool("Skill", true);
                     Caixa();
-                    Debug.Log("Deu tiro");
                     nextFireTime = Time.time + cooldownTime;
+                    anim.SetBool("Skill", true);
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Boba2);
-
+                    //StartCoroutine("Morrer");
+                    //anim.SetBool("Skill", true);
+                    //SoundManager.PlaySound(SoundManager.Sound.Boba2);
                 }
             }
         }
@@ -33,7 +36,7 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
 
     void Caixa()
     {
-        PhotonNetwork.Instantiate("Caixa", PosiInstantiate.position, Quaternion.identity);
+        PhotonNetwork.Instantiate("Caixa", PosiInstantiate.position, PosiInstantiate.rotation);
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -42,4 +45,5 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
             stream.SendNext(transform.position);
         }
     }
+    
 }

@@ -20,7 +20,7 @@ public class PickUPOBJ : MonoBehaviourPun, IPunObservable
         {
             if (Segurando == true)
             {
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     Segurando = false;
                     ObjSegurando.transform.parent = null;
@@ -41,7 +41,7 @@ public class PickUPOBJ : MonoBehaviourPun, IPunObservable
                     {
                         if (Hit.transform.gameObject.tag == Tags[x])
                         {
-                            if (Input.GetButtonDown("Jump"))
+                            if (Input.GetKeyDown(KeyCode.F))
                             {
                                 Segurando = true;
                                 ObjSegurando = Hit.transform.gameObject;

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class InimigoAtk : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject[] player;
 
     public bool Atack;
     // Start is called before the first frame update
@@ -27,7 +27,10 @@ public class InimigoAtk : MonoBehaviour
         if (Atack == true)
         {
             StartCoroutine("TempoDAtaque");
-            player.GetComponent<Player>().vida -= 10;
+            for (int i = 0; i < player.Length; i++)
+            {
+                player[i].GetComponent<Player2>().vida -= 10;
+            }
             SoundManager.PlaySound(SoundManager.Sound.Praga);
         }
     }

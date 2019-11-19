@@ -14,8 +14,10 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     public float cooldownTime = 1;
     public Image imageCooldown;
     public Image imageCooldown2;
-
+    public ParticleSystem particula;
     private float nextFireTime = 0;
+    public Animator anim;
+
     void Update()
     {
         if (photonView.IsMine)
@@ -24,22 +26,24 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    anim.SetBool("Skill", true);
                     for (int i = 0; i < players.Count; i++)
                     {
                         BUFF(players[i]);
                     }
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Cozinheiro1);
+                    //SoundManager.PlaySound(SoundManager.Sound.Cozinheiro1);
 
                 }
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
                 if (Input.GetKeyDown(KeyCode.R))
                 {
+                    anim.SetBool("SkillII", true);
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Cozinheiro2);
+                    //SoundManager.PlaySound(SoundManager.Sound.Cozinheiro2);
 
                 }
             }
@@ -48,8 +52,9 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     //da os Buffs
     void BUFF(GameObject GBJ)
     {
-        GBJ.GetComponent<Player>().vida += 9;
-        GBJ.GetComponent<Player>().healthBar.fillAmount += 9;
+        GBJ.GetComponent<Player2>().vida += 9;
+        GBJ.GetComponent<Player2>().healthBar.fillAmount += 9;
+        particula.Play();
     }
     //Randomizacao dos itens 
     void IRandom()

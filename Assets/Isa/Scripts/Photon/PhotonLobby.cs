@@ -8,7 +8,6 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
 {
     public static PhotonLobby lobby;
 
-
     public GameObject playButton;
     public GameObject cancelButton;
 
@@ -30,7 +29,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
 
     public void OnPlayButtonClicked()
     {
-        Debug.Log("Play Button was click");
+        Debug.Log("Play Button was clicked");
         playButton.SetActive(false);
         cancelButton.SetActive(true);
         PhotonNetwork.JoinRandomRoom();
@@ -41,7 +40,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         Debug.Log("Tried to join a random game but failed. There must be no open games available");
         CreateRoom();
     }
-        void CreateRoom()
+    void CreateRoom()
     {
         Debug.Log("Trying to create a new Room");
         int randomRoomName = Random.Range(0, 10000);
@@ -59,7 +58,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         Debug.Log("Tried to create a new room but failed, there must already be a room with the same name");
         CreateRoom();
     }
-    
+
     public void OnCancelButtonClicked()
     {
         cancelButton.SetActive(false);

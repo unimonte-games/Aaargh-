@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-   public void OnClickCharacterPick(int whichCharacter)
+    private PlayerInfo PI;
+
+    private void Awake()
     {
-        if(PlayerInfo.PI != null)
+        PI = FindObjectOfType<PlayerInfo>();
+    }
+
+    public void OnClickCharacterPick(int whichCharacter)
+    {
+        if (PI != null)
         {
-            PlayerInfo.PI.mySelectedCharacter = whichCharacter;
+            PlayerInfo.mySelectedCharacter = whichCharacter;
             PlayerPrefs.SetInt("MyCharacter", whichCharacter);
         }
     }

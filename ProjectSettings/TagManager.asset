@@ -8,6 +8,7 @@ TagManager:
   - Inimigo
   - Inimigo2
   - Ground
+  - CasaFeiticeiro
   layers:
   - Default
   - TransparentFX
