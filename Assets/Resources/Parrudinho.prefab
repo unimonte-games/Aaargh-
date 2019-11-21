@@ -1497,7 +1497,7 @@ MonoBehaviour:
   raioRef: {fileID: 3877157079885889430}
   raioDist: 0
   chaoDist: 0
-  vida: 100
+  vida: 136
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 2179419913033455890}
