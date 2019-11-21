@@ -8,32 +8,37 @@ using UnityEngine.SceneManagement;
 
 public class PhotonManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
 {
+    public static PhotonManager room;
     private PhotonView PV;
 
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         PV = GetComponent<PhotonView>();
+        if (PhotonManager.room == null)
+        {
+            PhotonManager.room = this;
+        }
+        else
+        {
+            if (PhotonManager.room != this)
+            {
+                Destroy(PhotonManager.room.gameObject);
+                PhotonManager.room = this;
+            }
+        }
     }
 
     void Start()
     {
             PhotonNetwork.ConnectUsingSettings();
-            Debug.Log("Connected to Photon.");
-
     }
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinLobby();
+        Debug.Log("Connected to Photon.");
         // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
         PhotonNetwork.AutomaticallySyncScene = true;
-
-    }
-
-    public override void OnJoinedLobby()
-    {
-        Debug.Log("Joined lobby successfully.");
     }
 
     public override void OnEnable()
@@ -51,11 +56,18 @@ public class PhotonManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
 
     public override void OnJoinedRoom()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            PhotonNetwork.LoadLevel(4);
-            //mudar essa primeira cena
-        }
+        base.OnJoinedRoom();
+        Debug.Log("We are now in a room.");
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+        StartGame();
+    }
+
+    void StartGame()
+    {
+        Debug.Log("Loading Level");
+        //mudar essa primeira cena
+        PhotonNetwork.LoadLevel(4);
     }
 
     void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -72,7 +84,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
     void CreateRoom()
     {
         Debug.Log("Trying to create a new Room");
-        PhotonNetwork.CreateRoom("Room", new RoomOptions { MaxPlayers = 4 }, TypedLobby.Default);
+        RoomOptions roomOps = new RoomOptions()
+        { IsVisible = true, IsOpen = true, MaxPlayers = 4 };
+        PhotonNetwork.CreateRoom("Room", roomOps);
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)

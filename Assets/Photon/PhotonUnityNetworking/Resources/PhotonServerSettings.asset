@@ -36,5 +36,9 @@ MonoBehaviour:
   - RespawnSpaceship
   - RPC_AddCharacter
   - PlaySound
+  - Andar
+  - ArmaDefault
+  - ArmaPlayer
+  - ArmaDefaultZ
   DisableAutoOpenWizard: 1
   ShowSettings: 0

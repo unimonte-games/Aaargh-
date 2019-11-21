@@ -1,4 +1,4 @@
-﻿using Photon.Pun;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +10,8 @@ public class SoundManager : MonoBehaviour
     {
         //Defaults
         ArmaDefault,
-        HitDoPlayer,
-        HitDoInimigo,
+        HitNoPlayer,
+        HitNoInimigo,
         Passos,
         //Inimigos
         Galinha,
