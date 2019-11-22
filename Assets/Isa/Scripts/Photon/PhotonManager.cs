@@ -109,6 +109,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
         if (parr == true)
         {
             PhotonNetwork.Instantiate("Parrudinho",GS.spawnPoints[spawnPicker].position, GS.spawnPoints[spawnPicker].rotation, 0);
+            DontDestroyOnLoad(this.gameObject);
         }
         if (cozi == true)
         {
