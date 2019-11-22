@@ -25,6 +25,8 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
                     nextFireTime = Time.time + cooldownTime;
                     anim.SetBool("Skill", true);
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                    anim.SetBool("Skill", false);
+
                     //StartCoroutine("Morrer");
                     //anim.SetBool("Skill", true);
                     //SoundManager.PlaySound(SoundManager.Sound.Boba2);

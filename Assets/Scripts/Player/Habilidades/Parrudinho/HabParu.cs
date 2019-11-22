@@ -31,6 +31,8 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     SoundManager.PlaySound(SoundManager.Sound.ExMarinheiro2);
+                    anim.SetBool("Skill", false);
+
                 }
                 if (Input.GetKeyDown(KeyCode.Y))
                 {
@@ -44,6 +46,7 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     SoundManager.PlaySound(SoundManager.Sound.ExMarinheiro1);
+                    anim.SetBool("SkillII", false);
                 }
             }
         }

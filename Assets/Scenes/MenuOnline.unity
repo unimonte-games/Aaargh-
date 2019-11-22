@@ -432,8 +432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.000015, y: 24.899998}
-  m_SizeDelta: {x: 522.6, y: 349.3}
+  m_AnchoredPosition: {x: -0.0022888, y: -0.00070572}
+  m_SizeDelta: {x: 554.63, y: 415.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270495100
 MonoBehaviour:
@@ -856,12 +856,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_ReferenceResolution: {x: 1820, y: 1080}
+  m_ScreenMatchMode: 2
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -941,8 +941,8 @@ MonoBehaviour:
     type: 3}
   Cozinheiro: {fileID: 5461071981140139811, guid: c26a6d09bc9f7c74d92d3ef60cb8989a,
     type: 3}
-  Boba: {fileID: 812341107168658963, guid: 6593cb088bb0fd84b849a241508e1060, type: 3}
-  Conjurador: {fileID: 1825533628311789827, guid: 7dc8a712cd9b75c41ab6758085abe070,
+  Boba: {fileID: 1495028475654765289, guid: 6593cb088bb0fd84b849a241508e1060, type: 3}
+  Conjurador: {fileID: 4391580803882853662, guid: 7dc8a712cd9b75c41ab6758085abe070,
     type: 3}
 --- !u!4 &1046551954
 Transform:

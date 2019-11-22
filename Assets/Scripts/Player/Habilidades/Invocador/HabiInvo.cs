@@ -30,6 +30,8 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     SoundManager.PlaySound(SoundManager.Sound.Conjurador1);
+                    anim.SetBool("Skill", false);
+
 
                 }
                 if (Input.GetKeyDown(KeyCode.R))
@@ -39,6 +41,8 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     SoundManager.PlaySound(SoundManager.Sound.Conjurador2);
+                    anim.SetBool("SkillII", false);
+
 
                 }
             }

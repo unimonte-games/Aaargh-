@@ -41,12 +41,10 @@ public class Player2 : MonoBehaviourPun, IPunObservable
         if (photonView.IsMine)
         {
             // guarda de antemão a rotação
-            var rotacaoAntes = meu_transform.rotation;
 
             // aplica movimento
             {
                 // reseta rotação para que a função Translate não nos faça voar
-                meu_transform.rotation = Quaternion.Euler(0, meu_transform.localEulerAngles.y, 0);
 
                 
 
@@ -91,7 +89,6 @@ public class Player2 : MonoBehaviourPun, IPunObservable
                 }
             }
             // redefine a rotação que tinha antes
-            meu_transform.rotation = rotacaoAntes;
 
             if (vida <= 0)
             {

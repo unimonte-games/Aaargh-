@@ -5,9 +5,12 @@ using UnityEngine.AI;
 
 public class InimigoAtk : MonoBehaviour
 {
-    public GameObject[] player;
-
+    public GameObject player;
+    public Transform player2;
+    public Transform player3;
+    public Transform player4;
     public bool Atack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +27,28 @@ public class InimigoAtk : MonoBehaviour
 
     void Atacar()
     {
-        if (Atack == true)
+        if (Atack == true && player)
         {
             StartCoroutine("TempoDAtaque");
-            for (int i = 0; i < player.Length; i++)
-            {
-                player[i].GetComponent<Player2>().vida -= 10;
-            }
+                player.GetComponent<Player2>().vida -= 10;
+            SoundManager.PlaySound(SoundManager.Sound.Praga);
+        }
+        if (Atack == true && player2)
+        {
+            StartCoroutine("TempoDAtaque");
+            player.GetComponent<Player2>().vida -= 10;
+            SoundManager.PlaySound(SoundManager.Sound.Praga);
+        }
+        if (Atack == true && player3)
+        {
+            StartCoroutine("TempoDAtaque");
+            player.GetComponent<Player2>().vida -= 10;
+            SoundManager.PlaySound(SoundManager.Sound.Praga);
+        }
+        if (Atack == true && player4)
+        {
+            StartCoroutine("TempoDAtaque");
+            player.GetComponent<Player2>().vida -= 10;
             SoundManager.PlaySound(SoundManager.Sound.Praga);
         }
     }
