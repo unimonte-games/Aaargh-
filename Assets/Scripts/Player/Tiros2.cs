@@ -105,7 +105,7 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
             //if (Input.GetButtonDown("Fire1") && armas[armaAtual].balasNoPente > 0 && recarregando == false && atirando == false)
             if (Input.GetMouseButton(0) && armas[armaAtual].balasNoPente > 0 && recarregando == false && atirando == false)
             {
-                GameObject balaTemp = PhotonNetwork.Instantiate("Bala", lugardotiro.position, Quaternion.identity);
+                GameObject balaTemp = PhotonNetwork.Instantiate("Bala", lugardotiro.position, transform.rotation);
                 atirando = true;
                 StartCoroutine(TempoTiro(armas[armaAtual].tempoPorTiro));
                 armas[armaAtual].balasNoPente--;

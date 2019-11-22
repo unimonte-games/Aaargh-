@@ -18,7 +18,6 @@ public class IA : MonoBehaviour
     public Transform player4;
     public float vida = 100f;
     bool chamouMorte = false;
-    public GameObject pergaminho;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -95,7 +94,7 @@ public class IA : MonoBehaviour
         {
             if (timeShots <= 0)
             {
-                PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate("Bullet", transform.position, Quaternion.identity);
                 timeShots = StartTimeShots;
             }
             else
@@ -121,6 +120,5 @@ public class IA : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);    
             Destroy(gameObject);
-        pergaminho.SetActive(true);
     }
 }

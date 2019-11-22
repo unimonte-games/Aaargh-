@@ -58,7 +58,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
 
                 // multiplica pela velocidade e delta tempo
                 deltaMovimento *= velocidade * Time.deltaTime;
-
+                Debug.LogWarning(string.Concat(deltaMovimento, "*=", velocidade, "*", Time.deltaTime));
                 // aplica movimento
                 meu_transform.Translate(deltaMovimento);
 
@@ -131,7 +131,7 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             }
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit(Collision collision)
     {
         if (photonView.IsMine)
         {
