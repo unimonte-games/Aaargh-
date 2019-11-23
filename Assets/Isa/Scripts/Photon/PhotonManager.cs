@@ -39,6 +39,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
         Debug.Log("Connected to Photon.");
         // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
         PhotonNetwork.AutomaticallySyncScene = true;
+        ParButton.SetActive(true);
+        CozButton.SetActive(true);
+        BobaButton.SetActive(true);
+        ConjButton.SetActive(true);
+        Conectando.SetActive(false);
     }
 
     public override void OnEnable()
@@ -159,5 +164,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
         conj = true;
         PhotonNetwork.JoinRandomRoom();
     }
+    public GameObject ParButton;
+    public GameObject CozButton;
+    public GameObject BobaButton;
+    public GameObject ConjButton;
 
+    public GameObject Conectando;
 }
