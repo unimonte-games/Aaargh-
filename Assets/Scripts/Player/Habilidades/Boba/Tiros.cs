@@ -44,6 +44,9 @@ public class Tiros : MonoBehaviourPun, IPunObservable
     LineRenderer linhaDoLaser;
     GameObject luzColisao;
 
+    public AudioClip arma;
+    AudioSource audioSource;
+
     public GameObject bullet;
 
     void Start()
@@ -104,6 +107,9 @@ public class Tiros : MonoBehaviourPun, IPunObservable
             armas[armaAtual].balasNoPente--;
             GameObject balaTemp = PhotonNetwork.Instantiate("Bala", transform.position + transform.forward, transform.rotation);
             Destroy(balaTemp, 1.0f);
+            //audio
+            AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+            AudioSource.PlayClipAtPoint(arma, transform.position);
         }
         //recarregar
         if (Input.GetKeyDown(botaoRecarregar) && recarregando == false && atirando == false && (armas[armaAtual].balasNoPente < armas[armaAtual].balasPorPente) && (armas[armaAtual].balasExtra > 0))

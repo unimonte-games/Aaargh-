@@ -26,6 +26,11 @@ public class Player2 : MonoBehaviourPun, IPunObservable
 
     public bool IsGrounded;
 
+    //Audio :o
+    public AudioClip andar;
+    public AudioClip hitnoplayer;
+    AudioSource audioSource;
+
     void Awake()
     {
         if (photonView.IsMine)
@@ -34,6 +39,8 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             transform.tag = "Player";
             anim = GetComponent<Animator>();
             rb = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
+            pv = GetComponent<PhotonView>();
         }
     }
     void FixedUpdate()
@@ -68,10 +75,14 @@ public class Player2 : MonoBehaviourPun, IPunObservable
                 }
                 if (Input.GetButtonDown("Horizontal"))
                 {
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(andar, transform.position);
                     Moviment();
                 }
                 if (Input.GetButtonDown("Vertical"))
                 {
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(andar, transform.position);
                     Moviment();
                 }
             }
@@ -116,6 +127,8 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             {
                 vida -= 10;
                 healthBar.fillAmount = vida / 100;
+                AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                AudioSource.PlayClipAtPoint(hitnoplayer, transform.position);
             }
             if (collision.gameObject.tag == "Ground")
             {

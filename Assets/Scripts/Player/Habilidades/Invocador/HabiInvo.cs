@@ -16,6 +16,11 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
     private float nextFireTime = 0;
     public Animator anim;
 
+    public AudioClip conj1;
+    public AudioClip conj2;
+
+    AudioSource audioSource;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +34,8 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                     PhotonNetwork.Instantiate("Shield", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Conjurador1);
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(conj1, transform.position);
                     anim.SetBool("Skill", false);
 
 
@@ -40,7 +46,8 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                     PhotonNetwork.Instantiate("Golem", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.Conjurador2);
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(conj2, transform.position);
                     anim.SetBool("SkillII", false);
 
 
@@ -54,5 +61,9 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
         {
             stream.SendNext(transform.position);
         }
+    }
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 }

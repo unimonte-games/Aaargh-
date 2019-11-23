@@ -535,6 +535,7 @@ MonoBehaviour:
     objetoArma: {fileID: 3883229834751397398}
     lugarParticula: {fileID: 259572455682051408}
     particulaFogo: {fileID: 5667084165084647412}
+  arma: {fileID: 8300000, guid: a8afbc1d0c0a96b498a7914ac1e487db, type: 3}
   bullet: {fileID: 2236990986407660271, guid: 735d332d02c66a94394028bebe04571f, type: 3}
 --- !u!114 &6655274312670283043
 MonoBehaviour:
@@ -553,7 +554,7 @@ MonoBehaviour:
   raioRef: {fileID: 7466551931344137376}
   raioDist: 0
   chaoDist: 0
-  vida: 109
+  vida: 154
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 6137388945134271439}
@@ -561,6 +562,8 @@ MonoBehaviour:
   rb: {fileID: 2377803729868458940}
   healthBar: {fileID: 2303990970636989313}
   IsGrounded: 0
+  andar: {fileID: 8300000, guid: 82e6a22514f629b48ac53372fe37332b, type: 3}
+  hitnoplayer: {fileID: 8300000, guid: 75c2bd15a4be550468e0b431b298681e, type: 3}
 --- !u!114 &6076207173776037355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +581,7 @@ MonoBehaviour:
   PosiInstantiate: {fileID: 2552228749650980772}
   imageCooldown: {fileID: 4266597753708605627}
   anim: {fileID: 6137388945134271439}
+  boba2: {fileID: 8300000, guid: e2e8c67849617a649bf7411529ac9832, type: 3}
 --- !u!114 &6410330297534050441
 MonoBehaviour:
   m_ObjectHideFlags: 0

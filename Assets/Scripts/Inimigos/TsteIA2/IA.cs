@@ -18,6 +18,11 @@ public class IA : MonoBehaviour
     public Transform player4;
     public float vida = 100f;
     bool chamouMorte = false;
+
+    public AudioClip vaca;
+
+    AudioSource audioSource;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,6 +30,7 @@ public class IA : MonoBehaviour
         player3 = GameObject.FindGameObjectWithTag("Player").transform;
         player4 = GameObject.FindGameObjectWithTag("Player").transform;
         pperto = false;
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -111,6 +117,8 @@ public class IA : MonoBehaviour
             {
                 chamouMorte = true;
                 StartCoroutine("Morrer");
+                //AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                //AudioSource.PlayClipAtPoint(vaca, transform.position);
             }
         }
     }

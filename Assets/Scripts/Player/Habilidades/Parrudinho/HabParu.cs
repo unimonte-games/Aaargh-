@@ -14,6 +14,12 @@ public class HabParu : MonoBehaviourPun, IPunObservable
     public Animator anim;
     public Image imageCooldown2;
 
+    //audio
+    public AudioClip par1;
+    public AudioClip par2;
+
+    AudioSource audioSource;
+
     private float nextFireTime = 0;
     private void Update()
     {
@@ -30,11 +36,12 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                     }
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.ExMarinheiro2);
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(par1, transform.position);
                     anim.SetBool("Skill", false);
 
                 }
-                if (Input.GetKeyDown(KeyCode.Y))
+                if (Input.GetKeyDown(KeyCode.R))
                 {
                     anim.SetBool("SkillII", true);
                     for (int i = 0; i < Inimigos.Count; i++)
@@ -45,7 +52,8 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                     }
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    SoundManager.PlaySound(SoundManager.Sound.ExMarinheiro1);
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(par2, transform.position);
                     anim.SetBool("SkillII", false);
                 }
             }
@@ -83,5 +91,9 @@ public class HabParu : MonoBehaviourPun, IPunObservable
         {
             stream.SendNext(transform.position);
         }
+    }
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 }

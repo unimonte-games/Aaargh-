@@ -11,10 +11,15 @@ public class InimigoAtk : MonoBehaviour
     public Transform player4;
     public bool Atack;
 
+    public AudioClip praga;
+
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         Atack = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,25 +36,26 @@ public class InimigoAtk : MonoBehaviour
         {
             StartCoroutine("TempoDAtaque");
                 player.GetComponent<Player2>().vida -= 10;
-            SoundManager.PlaySound(SoundManager.Sound.Praga);
+            AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+            AudioSource.PlayClipAtPoint(praga, transform.position);
         }
         if (Atack == true && player2)
         {
             StartCoroutine("TempoDAtaque");
-            player.GetComponent<Player2>().vida -= 10;
-            SoundManager.PlaySound(SoundManager.Sound.Praga);
+            AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+            AudioSource.PlayClipAtPoint(praga, transform.position);
         }
         if (Atack == true && player3)
         {
             StartCoroutine("TempoDAtaque");
-            player.GetComponent<Player2>().vida -= 10;
-            SoundManager.PlaySound(SoundManager.Sound.Praga);
+            AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+            AudioSource.PlayClipAtPoint(praga, transform.position);
         }
         if (Atack == true && player4)
         {
             StartCoroutine("TempoDAtaque");
-            player.GetComponent<Player2>().vida -= 10;
-            SoundManager.PlaySound(SoundManager.Sound.Praga);
+            AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+            AudioSource.PlayClipAtPoint(praga, transform.position);
         }
     }
     IEnumerator TempoDAtaque()

@@ -694,6 +694,8 @@ MonoBehaviour:
   rb: {fileID: 7801508330546836651}
   healthBar: {fileID: 6461583254554899248}
   IsGrounded: 0
+  andar: {fileID: 8300000, guid: 82e6a22514f629b48ac53372fe37332b, type: 3}
+  hitnoplayer: {fileID: 8300000, guid: 75c2bd15a4be550468e0b431b298681e, type: 3}
 --- !u!114 &7381476227364845578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +729,7 @@ MonoBehaviour:
       type: 3}
   bullet: {fileID: 2236990986407660271, guid: 735d332d02c66a94394028bebe04571f, type: 3}
   lugardotiro: {fileID: 5792499533000949577}
+  arma: {fileID: 8300000, guid: a8afbc1d0c0a96b498a7914ac1e487db, type: 3}
 --- !u!114 &4054654427830217568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +774,8 @@ MonoBehaviour:
   imageCooldown: {fileID: 6163194003524210647}
   imageCooldown2: {fileID: 9020018018015869728}
   anim: {fileID: 6108372058532278256}
+  coz1: {fileID: 8300000, guid: 29bb6c6945de8c74a87d52488f406ff8, type: 3}
+  coz2: {fileID: 8300000, guid: 92e32c4ca6f49a642bbd81d441f41b5a, type: 3}
 --- !u!114 &7230136247671123783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,11 +1318,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cozinheiro
       objectReference: {fileID: 0}
-    - target: {fileID: -4097746464622749797, guid: c14c6cbf58fa6654ab7a23a3678943f1,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
     - target: {fileID: -1504981713932161579, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1349,6 +1349,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
     - target: {fileID: -7582824008816538813, guid: c14c6cbf58fa6654ab7a23a3678943f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
+    - target: {fileID: -4097746464622749797, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

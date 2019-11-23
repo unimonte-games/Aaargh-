@@ -1500,6 +1500,8 @@ MonoBehaviour:
   rb: {fileID: 1645203325176511651}
   healthBar: {fileID: 3877157078114020224}
   IsGrounded: 0
+  andar: {fileID: 8300000, guid: 82e6a22514f629b48ac53372fe37332b, type: 3}
+  hitnoplayer: {fileID: 8300000, guid: 75c2bd15a4be550468e0b431b298681e, type: 3}
 --- !u!114 &5177105367097377724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1520,8 @@ MonoBehaviour:
   imageCooldown: {fileID: 1319092248620875873}
   anim: {fileID: 2179419913033455890}
   imageCooldown2: {fileID: 2278049575272851788}
+  par1: {fileID: 8300000, guid: 74b90abdec350474f9d42326ac3a117f, type: 3}
+  par2: {fileID: 8300000, guid: a20b93f17475c7842bcf62c28a6cc0e5, type: 3}
 --- !u!114 &2843854882999723349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,6 +1554,7 @@ MonoBehaviour:
     particulaFogo: {fileID: 6895208482808277323}
   bullet: {fileID: 2236990986407660271, guid: 735d332d02c66a94394028bebe04571f, type: 3}
   lugardotiro: {fileID: 6901820438838909297}
+  arma: {fileID: 8300000, guid: a8afbc1d0c0a96b498a7914ac1e487db, type: 3}
 --- !u!114 &7514149911078674484
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,10 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
     private float nextFireTime = 0;
     public Image imageCooldown;
     public Animator anim;
+    public AudioClip boba2;
+
+    AudioSource audioSource;
+
     void Update()
     {
         if (photonView.IsMine)
@@ -26,10 +30,10 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
                     anim.SetBool("Skill", true);
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     anim.SetBool("Skill", false);
-
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(boba2, transform.position);
                     //StartCoroutine("Morrer");
                     //anim.SetBool("Skill", true);
-                    //SoundManager.PlaySound(SoundManager.Sound.Boba2);
                 }
             }
         }
@@ -48,4 +52,8 @@ public class HabilidadesBoba : MonoBehaviourPun, IPunObservable
         }
     }
     
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 }

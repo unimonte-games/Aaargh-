@@ -18,6 +18,11 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     private float nextFireTime = 0;
     public Animator anim;
 
+    public AudioClip coz1;
+    public AudioClip coz2;
+
+    AudioSource audioSource;
+
     void Update()
     {
         if (photonView.IsMine)
@@ -35,7 +40,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     anim.SetBool("Skill", false);
 
-                    //SoundManager.PlaySound(SoundManager.Sound.Cozinheiro1);
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(coz1, transform.position);
 
                 }
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
@@ -45,7 +51,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
-                    //SoundManager.PlaySound(SoundManager.Sound.Cozinheiro2);
+                    AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(coz2, transform.position);
                     anim.SetBool("SkillII", false);
 
 
@@ -65,11 +72,11 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
     {
         objN = Random.Range(0, 3);
         objC = 0;
-        while(objC < 3)
+        /*while(objC < 3)
         {
             objetos[objC].SetActive(false);
             objC += 1;
-        }
+        }*/
         objetos[objN].SetActive(true);
         objetos[objC] = PhotonNetwork.Instantiate(objetos[objC].name, PosiInstantiate.position + PosiInstantiate.forward, PosiInstantiate.rotation);
         Destroy(objetos[objC], 0.3f);
@@ -82,4 +89,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
         }
     }
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 }

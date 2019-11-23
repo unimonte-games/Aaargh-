@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8270425458652378554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7297003400954593160}
@@ -69,7 +69,8 @@ MonoBehaviour:
   player3: {fileID: 8987445606809835217, guid: c26a6d09bc9f7c74d92d3ef60cb8989a, type: 3}
   player4: {fileID: 8121354744667124840, guid: 306a1a8f758bf6640a6bb79e0bfbfd46, type: 3}
   alvo: {fileID: 87057101680091702, guid: 507058ffdb5993c46b2a1a41a56abc5a, type: 3}
-  vida: -200
+  vida: -415
+  hitnoinimigo: {fileID: 0}
 --- !u!114 &8270425458652378555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +88,7 @@ MonoBehaviour:
   player3: {fileID: 8987445606809835217, guid: c26a6d09bc9f7c74d92d3ef60cb8989a, type: 3}
   player4: {fileID: 8121354744667124840, guid: 306a1a8f758bf6640a6bb79e0bfbfd46, type: 3}
   Atack: 0
+  praga: {fileID: 8300000, guid: 7726404925834204e94f38d3360a194f, type: 3}
 --- !u!114 &-8724519332664638040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,11 +133,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8270425458652378176}
     m_Modifications:
-    - target: {fileID: 6119853472089185164, guid: 630673f8c5688fe499e63da3bc2bb4af,
-        type: 3}
-      propertyPath: m_Name
-      value: Inimigo_Praga
-      objectReference: {fileID: 0}
     - target: {fileID: 7112678692547455391, guid: 630673f8c5688fe499e63da3bc2bb4af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 244.21446
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119853472089185164, guid: 630673f8c5688fe499e63da3bc2bb4af,
+        type: 3}
+      propertyPath: m_Name
+      value: Inimigo_Praga
       objectReference: {fileID: 0}
     - target: {fileID: 882507991634625765, guid: 630673f8c5688fe499e63da3bc2bb4af,
         type: 3}

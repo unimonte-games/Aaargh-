@@ -14,8 +14,14 @@ public class IAPRAGA : MonoBehaviour
     public Transform alvo;
     public float vida = 100f;
     bool chamouMorte = false;
+
+    public AudioClip hitnoinimigo;
+
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         player2 = GameObject.FindGameObjectWithTag("Player").transform;
         player3 = GameObject.FindGameObjectWithTag("Player").transform;
@@ -98,6 +104,8 @@ public class IAPRAGA : MonoBehaviour
         if(collision.gameObject.name == "Shield")
         {
             StartCoroutine("Morrer");
+            //AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+            //AudioSource.PlayClipAtPoint(hitnoinimigo, transform.position);
         }
     }
     IEnumerator Morrer()

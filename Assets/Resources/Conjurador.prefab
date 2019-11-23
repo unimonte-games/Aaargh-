@@ -676,7 +676,7 @@ MonoBehaviour:
   raioRef: {fileID: 9075740858724296604}
   raioDist: 0
   chaoDist: 0
-  vida: 136
+  vida: 181
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 2593769332849907149}
@@ -684,6 +684,8 @@ MonoBehaviour:
   rb: {fileID: 1981338710499675798}
   healthBar: {fileID: 2685960348412966165}
   IsGrounded: 0
+  andar: {fileID: 8300000, guid: 82e6a22514f629b48ac53372fe37332b, type: 3}
+  hitnoplayer: {fileID: 8300000, guid: 75c2bd15a4be550468e0b431b298681e, type: 3}
 --- !u!114 &4021158207537899362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +705,8 @@ MonoBehaviour:
   imageCooldown: {fileID: 2366906301395128573}
   imageCooldown2: {fileID: 66841048656528789}
   anim: {fileID: 2593769332849907149}
+  conj1: {fileID: 8300000, guid: dd459c65d844b6e4799a50ba4e7551ad, type: 3}
+  conj2: {fileID: 8300000, guid: aed60586d78baa64db43ea811752ac9a, type: 3}
 --- !u!114 &1446198464832083530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,6 +757,7 @@ MonoBehaviour:
       type: 3}
   bullet: {fileID: 2236990986407660271, guid: 735d332d02c66a94394028bebe04571f, type: 3}
   lugardotiro: {fileID: 6178138101780753107}
+  arma: {fileID: 8300000, guid: a8afbc1d0c0a96b498a7914ac1e487db, type: 3}
 --- !u!114 &-4334011920636613834
 MonoBehaviour:
   m_ObjectHideFlags: 0

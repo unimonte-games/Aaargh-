@@ -50,8 +50,15 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
     public GameObject bullet;
     public Transform lugardotiro;
 
+    
+    public AudioClip arma;
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+    //  photonView  = GetComponent<PhotonView>();
+
         if (photonView.IsMine)
         {
             for (int x = 0; x < armas.Length; x++)
@@ -110,6 +117,9 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
                 StartCoroutine(TempoTiro(armas[armaAtual].tempoPorTiro));
                 armas[armaAtual].balasNoPente--;
                 Destroy(balaTemp, 5f);
+                //audio
+                AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
+                AudioSource.PlayClipAtPoint(arma, transform.position);
             }
             //recarregar
             if (Input.GetKeyDown(botaoRecarregar) && recarregando == false && atirando == false && (armas[armaAtual].balasNoPente < armas[armaAtual].balasPorPente) && (armas[armaAtual].balasExtra > 0))

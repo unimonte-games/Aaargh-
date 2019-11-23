@@ -38,7 +38,7 @@ public class SoundClips : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    //audioSource.PlayOneShot(arma, 0.7F);
-        //    AudioSource.PlayClipAtPoint(arma, new Vector3(5, 3, 1));
+        //    AudioSource.PlayClipAtPoint(arma, transform.position);
         //}
     }
 
