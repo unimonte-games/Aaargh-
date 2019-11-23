@@ -35,9 +35,13 @@ public class WaterBoat : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.Equals ("IlhaFeiticeiro"))
+        if(collision.gameObject.name == "IlhaFeiticeiro")
         {
-            PhotonNetwork.LoadLevel(1);
+            PhotonNetwork.LoadLevel(3);
+        }
+        if (collision.gameObject.name == "IlhaFeiticeiro")
+        {
+            PhotonNetwork.LoadLevel(3);
         }
     }
     public void FixedUpdate()

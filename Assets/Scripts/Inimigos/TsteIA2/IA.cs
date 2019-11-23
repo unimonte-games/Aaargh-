@@ -128,5 +128,6 @@ public class IA : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);    
             Destroy(gameObject);
+        PhotonNetwork.LoadLevel(9);
     }
 }

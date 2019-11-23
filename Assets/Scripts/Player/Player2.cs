@@ -65,7 +65,6 @@ public class Player2 : MonoBehaviourPun, IPunObservable
 
                 // multiplica pela velocidade e delta tempo
                 deltaMovimento *= velocidade * Time.deltaTime;
-                Debug.LogWarning(string.Concat(deltaMovimento, "*=", velocidade, "*", Time.deltaTime));
                 // aplica movimento
                 meu_transform.Translate(deltaMovimento);
 
@@ -134,13 +133,17 @@ public class Player2 : MonoBehaviourPun, IPunObservable
             {
                 IsGrounded = true;
             }
-            if(collision.gameObject.tag == "CasaFeiticeiro")
+            if(collision.gameObject.name == "CasaFeiticeiro")
             {
-                PhotonNetwork.LoadLevel(4);
+                PhotonNetwork.LoadLevel(5);
             }
             if(collision.gameObject.tag == "MudaScene")
             {
-                PhotonNetwork.LoadLevel(3);
+                PhotonNetwork.LoadLevel(4);
+            }
+            if(collision.gameObject.name == "navio")
+            {
+                PhotonNetwork.LoadLevel(8);
             }
         }
     }

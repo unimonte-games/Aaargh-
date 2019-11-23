@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 19319185}
   m_Layer: 0
   m_Name: "\xC1rvore maior"
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -937,7 +937,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 800d815e78806194eb160c24fde42905, type: 2}
+  - {fileID: 2100000, guid: 7842298d7ff8c6b489d18cbc1021e39f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1567,14 +1567,14 @@ RectTransform:
   m_GameObject: {fileID: 181571949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63, y: 0.63, z: 0.63}
+  m_LocalScale: {x: 1.410633, y: 1.410633, z: 1.410633}
   m_Children: []
   m_Father: {fileID: 1904801873}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -397.55103, y: 276.08}
+  m_AnchoredPosition: {x: -706, y: 369}
   m_SizeDelta: {x: -683.05005, y: -584.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181571951
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 293007104}
   m_Layer: 0
   m_Name: "\xE1rvores - piso 1"
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3538,14 +3538,14 @@ RectTransform:
   m_GameObject: {fileID: 426470773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63, y: 0.63, z: 0.63}
+  m_LocalScale: {x: 0.3410854, y: 0.5350527, z: 0.5350527}
   m_Children: []
   m_Father: {fileID: 1904801873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -399, y: 274}
+  m_AnchoredPosition: {x: -707.449, y: 366.92004}
   m_SizeDelta: {x: -716.4, y: -460.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426470775
@@ -3696,15 +3696,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3033463056350146284, guid: 83b0aa797758cfc4d946af8dac6cf8eb,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.047
-      objectReference: {fileID: 0}
     - target: {fileID: 676596813049100754, guid: 83b0aa797758cfc4d946af8dac6cf8eb,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033463056350146284, guid: 83b0aa797758cfc4d946af8dac6cf8eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.047
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b0aa797758cfc4d946af8dac6cf8eb, type: 3}
@@ -8272,7 +8272,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -9743,7 +9743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152649247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -187.2, y: 1, z: 98.6}
+  m_LocalPosition: {x: -181.5, y: 1, z: 94.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10475,7 +10475,7 @@ PrefabInstance:
     - target: {fileID: 4874676912246020715, guid: a09449d607196f74d891fab32fa5cc1a,
         type: 3}
       propertyPath: m_Name
-      value: Casa 1
+      value: CasaFeiticeiro
       objectReference: {fileID: 0}
     - target: {fileID: 4874676912246020715, guid: a09449d607196f74d891fab32fa5cc1a,
         type: 3}
@@ -10620,6 +10620,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1197160678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1197160680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4874676912246020715, guid: a09449d607196f74d891fab32fa5cc1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197160678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1197160681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197160680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3861754, y: 2.7672467, z: 3.0812595}
+  m_Center: {x: -0.031142417, y: 2.3509743, z: -0.012244839}
 --- !u!1001 &1203051042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17303,10 +17322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1820, y: 1080}
   m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -19026,6 +19045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ilha feiticeiro
       objectReference: {fileID: 0}
+    - target: {fileID: 4048913452925767605, guid: 4989bda1816ffc747bc5d00ecf9bcb1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4048913452925767604, guid: 4989bda1816ffc747bc5d00ecf9bcb1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19090,6 +19114,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446482303886505383, guid: 4989bda1816ffc747bc5d00ecf9bcb1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409188479813606844, guid: 4989bda1816ffc747bc5d00ecf9bcb1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953725427760773153, guid: 4989bda1816ffc747bc5d00ecf9bcb1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4989bda1816ffc747bc5d00ecf9bcb1d, type: 3}

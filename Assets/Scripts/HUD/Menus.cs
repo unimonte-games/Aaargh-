@@ -13,10 +13,6 @@ public class Menus : MonoBehaviour
         //aqui, ao invés de já ir pra uma sala que já carrega a fase e cria o seu player, tocar cutscene
         //depois dessa cutscene, PhotonNetwork.LoadLevel(cena que estiver para seleção de personagens), e dessa cena, cada botão instancia tal personagem na cena do jogo
     }
-    public void Barco()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
     public void ExitGame()
     {
         Application.Quit();

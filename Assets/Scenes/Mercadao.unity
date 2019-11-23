@@ -7232,15 +7232,15 @@ RectTransform:
   m_GameObject: {fileID: 204011256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.0768673, y: 1.9228882, z: 1.9228882}
   m_Children: []
   m_Father: {fileID: 446716929}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2013245, y: 15.094116}
-  m_SizeDelta: {x: 33.349976, y: -124.47}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 549.992, y: -4}
+  m_SizeDelta: {x: 1137.35, y: 495.52997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &204011258
 MonoBehaviour:
@@ -11681,15 +11681,15 @@ RectTransform:
   m_GameObject: {fileID: 375087704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.4179637, y: 2.0559, z: 2.0559}
   m_Children: []
   m_Father: {fileID: 1109278045}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2013855, y: 15.094009}
-  m_SizeDelta: {x: 33.349976, y: -124.47}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 557, y: 0}
+  m_SizeDelta: {x: 1137.35, y: 495.52997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375087706
 MonoBehaviour:
@@ -13650,16 +13650,16 @@ RectTransform:
   m_GameObject: {fileID: 446716928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76586, y: 0.76586, z: 0.76586}
+  m_LocalScale: {x: 0.45819175, y: 0.7331655, z: 0.7331655}
   m_Children:
   - {fileID: 204011257}
   m_Father: {fileID: 1092034471}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -393.07996, y: 258.44}
-  m_SizeDelta: {x: -716.4, y: -460.4}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 283, y: 294}
+  m_SizeDelta: {x: 1103.6, y: 619.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446716930
 MonoBehaviour:
@@ -17524,8 +17524,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.7770584, z: 1}
-  m_Center: {x: 0, y: 0.32878494, z: 0}
+  m_Size: {x: 1.3067428, y: 2.7770584, z: 1}
+  m_Center: {x: 0.15337071, y: 0.32878494, z: 0}
 --- !u!4 &542573835
 Transform:
   m_ObjectHideFlags: 0
@@ -31023,10 +31023,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1820, y: 1080}
   m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -31710,16 +31710,16 @@ RectTransform:
   m_GameObject: {fileID: 1109278044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76585996, y: 0.76585996, z: 0.76585996}
+  m_LocalScale: {x: 0.46338153, y: 0.77037853, z: 0.77037853}
   m_Children:
   - {fileID: 375087705}
   m_Father: {fileID: 1092034471}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -393.07996, y: 258.44006}
-  m_SizeDelta: {x: -716.4, y: -460.4}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 284.99, y: 296}
+  m_SizeDelta: {x: 1103.6, y: 619.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109278046
 MonoBehaviour:
@@ -60856,6 +60856,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2090180832}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2090180835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090180834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 58.57705, y: 52.097404, z: 23.046816}
+  m_Center: {x: 4.069809, y: 25.548704, z: -1.8372324}
 --- !u!1001 &2095865336
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class Ativador : MonoBehaviour
         }
         if(collision.gameObject.name == "navio")
         {
-            PhotonNetwork.LoadLevel(5);
+            PhotonNetwork.LoadLevel(8);
         }
     }
 }
