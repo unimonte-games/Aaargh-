@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 5109625749292033963}
   - component: {fileID: 482021457086109633}
   - component: {fileID: 6030061277360258668}
+  - component: {fileID: 7313025829516702019}
   m_Layer: 0
   m_Name: Boba da corte
   m_TagString: Player
@@ -668,8 +669,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Andando
+  - Type: 4
+    SynchronizeType: 2
+    Name: Skill
+  - Type: 4
+    SynchronizeType: 2
+    Name: Death
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
+--- !u!114 &7313025829516702019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495028475654765289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea79fdb4d2f1b640bd8e9af36c1944b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToIgnore:
+  - {fileID: 6410330297534050441}
+  - {fileID: 6655274312670283043}
+  - {fileID: 2984725456601274886}
 --- !u!1 &1682688093201826902
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: -141}
+  m_AnchoredPosition: {x: -198, y: -141}
   m_SizeDelta: {x: 246.78003, y: 46.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2303990971183165505
@@ -904,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -957,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -184.99994, y: -305.45398}
+  m_AnchoredPosition: {x: -197.99994, y: -305.45398}
   m_SizeDelta: {x: 246.78003, y: 46.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2303990971687590550
@@ -981,7 +1009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

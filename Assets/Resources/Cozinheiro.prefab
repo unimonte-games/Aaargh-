@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -96.4, y: -276.19}
+  m_AnchoredPosition: {x: -145.99976, y: -276.19}
   m_SizeDelta: {x: 246, y: 56.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1737549828631127429
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -499,6 +499,7 @@ GameObject:
   - component: {fileID: 227946556135163588}
   - component: {fileID: 635134796485667630}
   - component: {fileID: -7414885295210356957}
+  - component: {fileID: 2271674839009345679}
   m_Layer: 0
   m_Name: Cozinheiro
   m_TagString: Player
@@ -845,8 +846,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: Andando
+  - Type: 4
+    SynchronizeType: 0
+    Name: Skill
+  - Type: 4
+    SynchronizeType: 0
+    Name: Death
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!114 &2271674839009345679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461071981140139811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea79fdb4d2f1b640bd8e9af36c1944b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToIgnore:
+  - {fileID: 4054654427830217568}
+  - {fileID: 7381476227364845578}
+  - {fileID: 9202031979916043515}
 --- !u!1 &6291935844909588522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -96.40015, y: -378.41}
+  m_AnchoredPosition: {x: -146, y: -378.41}
   m_SizeDelta: {x: 246, y: 58.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1722594512742114787
@@ -1070,7 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -85,8 +85,8 @@ public class Tiros2 : MonoBehaviourPun, IPunObservable
         if (photonView.IsMine)
         {
             //UI
-            BalasExtra.text = "BalasExtra: " + armas[armaAtual].balasExtra;
-            BalasPente.text = "BalasNoPente: " + armas[armaAtual].balasNoPente;
+            BalasExtra.text = "Balas Extra: " + armas[armaAtual].balasExtra;
+            BalasPente.text = "Balas No Pente: " + armas[armaAtual].balasNoPente;
             //troca de armas
             if (Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")) > 0 && recarregando == false && atirando == false)
             {

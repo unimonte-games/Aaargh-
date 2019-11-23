@@ -31,7 +31,7 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     anim.SetBool("Skill", true);
-                    PhotonNetwork.Instantiate("Shield", PosiInstantiate.position, Quaternion.identity);
+                    PhotonNetwork.Instantiate("Shield", PosiInstantiate.position, PosiInstantiate.rotation);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
@@ -43,7 +43,7 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     anim.SetBool("Skill", true);
-                    PhotonNetwork.Instantiate("Golem", PosiInstantiate.position, Quaternion.identity);
+                    PhotonNetwork.Instantiate("Golem", PosiInstantiate.position, PosiInstantiate.rotation);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     AudioSource audioRPC = gameObject.AddComponent<AudioSource>();

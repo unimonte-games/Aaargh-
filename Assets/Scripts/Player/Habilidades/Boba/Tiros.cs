@@ -73,8 +73,8 @@ public class Tiros : MonoBehaviourPun, IPunObservable
     void Update()
     {
         //UI
-        BalasExtra.text = "BalasExtra: " + armas[armaAtual].balasExtra;
-        BalasPente.text = "BalasNoPente: " + armas[armaAtual].balasNoPente;
+        BalasExtra.text = "Balas Extra: " + armas[armaAtual].balasExtra;
+        BalasPente.text = "Balas No Pente: " + armas[armaAtual].balasNoPente;
         //troca de armas
         if (Mathf.Abs(Input.GetAxis("R")) > 0 && recarregando == false && atirando == false)
         {

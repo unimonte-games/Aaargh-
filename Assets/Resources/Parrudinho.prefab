@@ -768,7 +768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -340.14}
+  m_AnchoredPosition: {x: -225, y: -340.14}
   m_SizeDelta: {x: 251.69995, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3877157078029477492
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -810,7 +810,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: aa
+  m_Text: 
 --- !u!1 &3877157078089846586
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -5.000061, y: -141.66}
+  m_AnchoredPosition: {x: -225.00012, y: -141.66}
   m_SizeDelta: {x: 251.69995, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3877157078089846591
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: aa
+  m_Text: 
 --- !u!1 &3877157078114020254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1402,7 @@ GameObject:
   - component: {fileID: 9188113540682337570}
   - component: {fileID: 7397787094652958072}
   - component: {fileID: 5557226541003582075}
+  - component: {fileID: 2814480352836915089}
   m_Layer: 0
   m_Name: Parrudinho
   m_TagString: Player
@@ -1552,7 +1553,7 @@ MonoBehaviour:
       AtivarMiraComum: 0
     objetoArma: {fileID: 5905413419646378764}
     lugarParticula: {fileID: 8098695170442441130}
-    particulaFogo: {fileID: 6895208482808277323}
+    particulaFogo: {fileID: 6900359797944807705}
   bullet: {fileID: 2236990986407660271, guid: 735d332d02c66a94394028bebe04571f, type: 3}
   lugardotiro: {fileID: 6901820438838909297}
   arma: {fileID: 8300000, guid: a8afbc1d0c0a96b498a7914ac1e487db, type: 3}
@@ -1777,6 +1778,22 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
+--- !u!114 &2814480352836915089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111445683089950331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea79fdb4d2f1b640bd8e9af36c1944b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToIgnore:
+  - {fileID: 1575166132305980255}
+  - {fileID: 2843854882999723349}
+  - {fileID: 7514149911078674484}
 --- !u!1 &5283311444168350487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,7 +2139,7 @@ Transform:
   - {fileID: 4949285753277155916}
   - {fileID: 2481054618656124057}
   - {fileID: 6117509659409186199}
-  - {fileID: 8717523455848556611}
+  - {fileID: 6900359797944808027}
   - {fileID: 6901820438838909297}
   - {fileID: 1018220596682343903}
   m_Father: {fileID: 8121354744667124840}
@@ -2541,13 +2558,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 838afac312dcb1f4d952337aa349b4ce, type: 3}
---- !u!1 &6895208482808277323 stripped
+--- !u!1 &6900359797944807705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 32566675906681298, guid: 838afac312dcb1f4d952337aa349b4ce,
     type: 3}
   m_PrefabInstance: {fileID: 6900359797944807577}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8717523455848556611 stripped
+--- !u!4 &6900359797944808027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2826534094230247642, guid: 838afac312dcb1f4d952337aa349b4ce,
     type: 3}
