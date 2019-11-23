@@ -1424,10 +1424,7 @@ MonoBehaviour:
   StartTimeShots: 0.5
   pperto: 1
   bullet: {fileID: 1501874648038780722, guid: 7dba74514f07ab248a55e55c3ebef58f, type: 3}
-  player: {fileID: 2514189066718152954, guid: 6593cb088bb0fd84b849a241508e1060, type: 3}
-  player2: {fileID: 829354302767459564, guid: 7dc8a712cd9b75c41ab6758085abe070, type: 3}
-  player3: {fileID: 8987445606809835217, guid: c26a6d09bc9f7c74d92d3ef60cb8989a, type: 3}
-  player4: {fileID: 8121354744667124840, guid: 306a1a8f758bf6640a6bb79e0bfbfd46, type: 3}
+  player: {fileID: 0}
   vida: 250
   vaca: {fileID: 8300000, guid: 9bbdcf005ba8e2d47a893863a8442054, type: 3}
 --- !u!1001 &445983333

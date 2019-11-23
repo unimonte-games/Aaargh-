@@ -64,13 +64,10 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 8
   retreatDistance: 2
-  player: {fileID: 2514189066718152954, guid: 6593cb088bb0fd84b849a241508e1060, type: 3}
-  player2: {fileID: 829354302767459564, guid: 7dc8a712cd9b75c41ab6758085abe070, type: 3}
-  player3: {fileID: 8987445606809835217, guid: c26a6d09bc9f7c74d92d3ef60cb8989a, type: 3}
-  player4: {fileID: 8121354744667124840, guid: 306a1a8f758bf6640a6bb79e0bfbfd46, type: 3}
+  player: []
   alvo: {fileID: 87057101680091702, guid: 507058ffdb5993c46b2a1a41a56abc5a, type: 3}
-  vida: -415
-  hitnoinimigo: {fileID: 0}
+  vida: 200
+  hitnoinimigo: {fileID: 8300000, guid: 7726404925834204e94f38d3360a194f, type: 3}
 --- !u!114 &8270425458652378555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8270425458652378176}
     m_Modifications:
+    - target: {fileID: 6119853472089185164, guid: 630673f8c5688fe499e63da3bc2bb4af,
+        type: 3}
+      propertyPath: m_Name
+      value: Inimigo_Praga
+      objectReference: {fileID: 0}
     - target: {fileID: 7112678692547455391, guid: 630673f8c5688fe499e63da3bc2bb4af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,11 +204,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 244.21446
-      objectReference: {fileID: 0}
-    - target: {fileID: 6119853472089185164, guid: 630673f8c5688fe499e63da3bc2bb4af,
-        type: 3}
-      propertyPath: m_Name
-      value: Inimigo_Praga
       objectReference: {fileID: 0}
     - target: {fileID: 882507991634625765, guid: 630673f8c5688fe499e63da3bc2bb4af,
         type: 3}

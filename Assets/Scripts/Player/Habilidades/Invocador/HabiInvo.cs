@@ -42,13 +42,13 @@ public class HabiInvo : MonoBehaviourPun, IPunObservable
                 }
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-                    anim.SetBool("SkillII", true);
+                    anim.SetBool("Skill", true);
                     PhotonNetwork.Instantiate("Golem", PosiInstantiate.position, Quaternion.identity);
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
                     AudioSource.PlayClipAtPoint(conj2, transform.position);
-                    anim.SetBool("SkillII", false);
+                    anim.SetBool("Skill", false);
 
 
                 }

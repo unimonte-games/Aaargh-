@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 356410853954518367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5626373, y: 0.5626373, z: 0.5626373}
+  m_LocalScale: {x: 1.2170376, y: 1.2170376, z: 1.2170376}
   m_Children: []
   m_Father: {fileID: 8814474100059114943}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: -304}
+  m_AnchoredPosition: {x: -96.4, y: -276.19}
   m_SizeDelta: {x: 246, y: 56.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1737549828631127429
@@ -1039,14 +1039,14 @@ RectTransform:
   m_GameObject: {fileID: 7280119621419358800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5626373, y: 0.5626373, z: 0.5626373}
+  m_LocalScale: {x: 1.2170376, y: 1.2170376, z: 1.2170376}
   m_Children: []
   m_Father: {fileID: 8814474100059114943}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -148.00012, y: -351.25003}
+  m_AnchoredPosition: {x: -96.40015, y: -378.41}
   m_SizeDelta: {x: 246, y: 58.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1722594512742114787
@@ -1260,6 +1260,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 797224885714473810}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: c14c6cbf58fa6654ab7a23a3678943f1,
+        type: 3}
+      propertyPath: m_Name
+      value: Cozinheiro
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1329,11 +1334,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: c14c6cbf58fa6654ab7a23a3678943f1,
-        type: 3}
-      propertyPath: m_Name
-      value: Cozinheiro
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}

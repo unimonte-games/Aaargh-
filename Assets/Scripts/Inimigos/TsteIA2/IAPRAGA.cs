@@ -7,10 +7,7 @@ public class IAPRAGA : MonoBehaviour
     public float speed;
     public float stoppingDistance;
     public float retreatDistance;
-    public Transform player;
-    public Transform player2;
-    public Transform player3;
-    public Transform player4;
+    public GameObject[] player;
     public Transform alvo;
     public float vida = 100f;
     bool chamouMorte = false;
@@ -22,10 +19,21 @@ public class IAPRAGA : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        player2 = GameObject.FindGameObjectWithTag("Player").transform;
-        player3 = GameObject.FindGameObjectWithTag("Player").transform;
-        player4 = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+    GameObject PlayerPerto()
+    {
+        GameObject[] PPP = GameObject.FindGameObjectsWithTag("Player");
+        float Dist = float.MaxValue;
+        GameObject alvo = null;
+        for (int i = 0; i < PPP.Length; i++)
+        {
+           if((PPP[i].transform.position - transform.position).magnitude < Dist)
+            {
+                alvo = PPP[1];
+                Dist = (PPP[i].transform.position - transform.position).magnitude;
+            }
+        }
+        return alvo;
     }
     void Update()
     {
@@ -36,12 +44,9 @@ public class IAPRAGA : MonoBehaviour
         }
         else
         {
-            alvo = player;
-            alvo = player2;
-            alvo = player3;
-            alvo = player4;
+            alvo = PlayerPerto().transform;
         }
-        if (Vector3.Distance(transform.position, alvo.position) < stoppingDistance)
+        if (Vector3.Distance(transform.position, alvo.position) > stoppingDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, alvo.position, speed * Time.deltaTime);
         }
@@ -52,42 +57,6 @@ public class IAPRAGA : MonoBehaviour
         else if (Vector3.Distance(transform.position, alvo.position) < retreatDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, alvo.position, -speed * Time.deltaTime);
-        }
-        if (Vector3.Distance(transform.position, player2.position) < stoppingDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player2.position, speed * Time.deltaTime);
-        }
-        else if (Vector3.Distance(transform.position, player2.position) < stoppingDistance && Vector3.Distance(transform.position, player2.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-        }
-        else if (Vector3.Distance(transform.position, player2.position) < retreatDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player2.position, -speed * Time.deltaTime);
-        }
-        if (Vector3.Distance(transform.position, player3.position) < stoppingDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player3.position, speed * Time.deltaTime);
-        }
-        else if (Vector3.Distance(transform.position, player3.position) < stoppingDistance && Vector3.Distance(transform.position, player3.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-        }
-        else if (Vector3.Distance(transform.position, player3.position) < retreatDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player3.position, -speed * Time.deltaTime);
-        }
-        if (Vector3.Distance(transform.position, player4.position) < stoppingDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player4.position, speed * Time.deltaTime);
-        }
-        else if (Vector3.Distance(transform.position, player4.position) < stoppingDistance && Vector3.Distance(transform.position, player4.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-        }
-        else if (Vector3.Distance(transform.position, player4.position) < retreatDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player4.position, -speed * Time.deltaTime);
         }
         if (vida <= 0)
         {
@@ -106,6 +75,14 @@ public class IAPRAGA : MonoBehaviour
             StartCoroutine("Morrer");
             //AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
             //AudioSource.PlayClipAtPoint(hitnoinimigo, transform.position);
+        }
+        if(collision.gameObject.name == "Bala")
+        {
+            vida -= 10;
+        }
+        if(collision.gameObject.tag == "Player")
+        {
+            GetComponent<Player2>().vida -= 10;
         }
     }
     IEnumerator Morrer()

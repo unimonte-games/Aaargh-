@@ -8,7 +8,7 @@ public class bullet : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        corpo.AddForce(transform.forward * 20, ForceMode.Impulse);
+        corpo.AddForce(transform.forward * 100, ForceMode.Impulse);
     }
     //bala player
     private void OnCollisionEnter(Collision collision)

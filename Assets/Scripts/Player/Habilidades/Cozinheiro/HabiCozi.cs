@@ -47,13 +47,13 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
                 //Colocar script OBCOLISOR nos objetos para funcionar a colisao
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-                    anim.SetBool("SkillII", true);
+                    anim.SetBool("Skill", true);
                     IRandom();
                     nextFireTime = Time.time + cooldownTime;
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
                     AudioSource.PlayClipAtPoint(coz2, transform.position);
-                    anim.SetBool("SkillII", false);
+                    anim.SetBool("Skill", false);
 
 
                 }

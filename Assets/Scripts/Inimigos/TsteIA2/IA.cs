@@ -12,10 +12,7 @@ public class IA : MonoBehaviour
     public float StartTimeShots;
     public bool pperto;
     public GameObject bullet;
-    public Transform player;
-    public Transform player2;
-    public Transform player3;
-    public Transform player4;
+    public GameObject player;
     public float vida = 100f;
     bool chamouMorte = false;
 
@@ -25,74 +22,41 @@ public class IA : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        player2 = GameObject.FindGameObjectWithTag("Player").transform;
-        player3 = GameObject.FindGameObjectWithTag("Player").transform;
-        player4 = GameObject.FindGameObjectWithTag("Player").transform;
-        pperto = false;
+        pperto = true;
         audioSource = GetComponent<AudioSource>();
+    }
+    GameObject PlayerPerto()
+    {
+        GameObject[] PPP = GameObject.FindGameObjectsWithTag("Player");
+        float Dist = float.MaxValue;
+        GameObject alvo = null;
+        for (int i = 0; i < PPP.Length; i++)
+        {
+            if ((PPP[i].transform.position - transform.position).magnitude < Dist)
+            {
+                alvo = PPP[1];
+                Dist = (PPP[i].transform.position - transform.position).magnitude;
+            }
+        }
+        return alvo;
     }
     void Update()
     {
+        player = PlayerPerto();
         //movimentação
-        if (Vector3.Distance(transform.position, player.position) < stoppingDistance)
+        if (Vector3.Distance(transform.position, player.transform.position) > stoppingDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             pperto = true;
         }
-        else if (Vector3.Distance(transform.position, player.position) < stoppingDistance && Vector3.Distance(transform.position, player.position) > retreatDistance)
+        else if (Vector3.Distance(transform.position, player.transform.position) < stoppingDistance && Vector3.Distance(transform.position, player.transform.position) > retreatDistance)
         {
             transform.position = this.transform.position;
             pperto = false;
         }
-        else if(Vector3.Distance(transform.position, player.position) < retreatDistance)
+        else if(Vector3.Distance(transform.position, player.transform.position) < retreatDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-            pperto = false;
-        }
-        if (Vector3.Distance(transform.position, player2.position) < stoppingDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player2.position, speed * Time.deltaTime);
-            pperto = true;
-        }
-        else if (Vector3.Distance(transform.position, player2.position) < stoppingDistance && Vector3.Distance(transform.position, player2.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-            pperto = false;
-        }
-        else if (Vector3.Distance(transform.position, player2.position) < retreatDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player2.position, -speed * Time.deltaTime);
-            pperto = false;
-        }
-        if (Vector3.Distance(transform.position, player3.position) < stoppingDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player3.position, speed * Time.deltaTime);
-            pperto = true;
-        }
-        else if (Vector3.Distance(transform.position, player3.position) < stoppingDistance && Vector3.Distance(transform.position, player3.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-            pperto = false;
-        }
-        else if (Vector3.Distance(transform.position, player3.position) < retreatDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player3.position, -speed * Time.deltaTime);
-            pperto = false;
-        }
-        if (Vector3.Distance(transform.position, player4.position) < stoppingDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player4.position, speed * Time.deltaTime);
-            pperto = true;
-        }
-        else if (Vector3.Distance(transform.position, player4.position) < stoppingDistance && Vector3.Distance(transform.position, player4.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-            pperto = false;
-        }
-        else if (Vector3.Distance(transform.position, player4.position) < retreatDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player4.position, -speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, -speed * Time.deltaTime);
             pperto = false;
         }
         //faz atirar quando esta perto
@@ -100,7 +64,7 @@ public class IA : MonoBehaviour
         {
             if (timeShots <= 0)
             {
-                PhotonNetwork.Instantiate("Bullet", transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate("Bullet", transform.position, transform.rotation);
                 timeShots = StartTimeShots;
             }
             else
@@ -122,7 +86,13 @@ public class IA : MonoBehaviour
             }
         }
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Bala")
+        {
+            vida -= 10;
+        }
+    }
     IEnumerator Morrer()
     {
         GetComponent<MeshRenderer>().material.color = Color.red;

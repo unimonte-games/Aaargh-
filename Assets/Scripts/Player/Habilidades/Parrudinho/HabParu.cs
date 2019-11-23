@@ -43,7 +43,7 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                 }
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-                    anim.SetBool("SkillII", true);
+                    anim.SetBool("Skill", true);
                     for (int i = 0; i < Inimigos.Count; i++)
                     {
                         Contadordevida(Inimigos[i]);
@@ -54,7 +54,7 @@ public class HabParu : MonoBehaviourPun, IPunObservable
                     imageCooldown2.fillAmount += 1 / cooldownTime * Time.deltaTime;
                     AudioSource audioRPC = gameObject.AddComponent<AudioSource>();
                     AudioSource.PlayClipAtPoint(par2, transform.position);
-                    anim.SetBool("SkillII", false);
+                    anim.SetBool("Skill", false);
                 }
             }
         }
