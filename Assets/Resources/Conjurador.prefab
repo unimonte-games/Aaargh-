@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 1446198464832083530}
   - component: {fileID: 3885114500370198664}
   - component: {fileID: -4334011920636613834}
+  - component: {fileID: -7572426257347923584}
   m_Layer: 0
   m_Name: Conjurador
   m_TagString: Player
@@ -774,6 +775,22 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-7572426257347923584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391580803882853662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &5268067603411896913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,16 +1191,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 829354302767459564}
     m_Modifications:
-    - target: {fileID: 1184506580519872008, guid: dce148ec363ee954a9ac48608a7140fe,
-        type: 3}
-      propertyPath: m_Name
-      value: ConjuradorPivo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184506580519872008, guid: dce148ec363ee954a9ac48608a7140fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1184506580519872011, guid: dce148ec363ee954a9ac48608a7140fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1253,6 +1260,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.7561159
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184506580519872008, guid: dce148ec363ee954a9ac48608a7140fe,
+        type: 3}
+      propertyPath: m_Name
+      value: ConjuradorPivo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184506580519872008, guid: dce148ec363ee954a9ac48608a7140fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce148ec363ee954a9ac48608a7140fe, type: 3}
