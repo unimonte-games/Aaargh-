@@ -535,7 +535,7 @@ MonoBehaviour:
       AtivarMiraComum: 0
     objetoArma: {fileID: 3883229834751397398}
     lugarParticula: {fileID: 259572455682051408}
-    particulaFogo: {fileID: 5667084165084647412}
+    particulaFogo: {fileID: 5680785420077651878}
   arma: {fileID: 8300000, guid: a8afbc1d0c0a96b498a7914ac1e487db, type: 3}
   bullet: {fileID: 2236990986407660271, guid: 735d332d02c66a94394028bebe04571f, type: 3}
 --- !u!114 &6655274312670283043
@@ -1559,7 +1559,7 @@ Transform:
   m_LocalScale: {x: 3.3699992, y: 1, z: 1}
   m_Children:
   - {fileID: 668355469162991832}
-  - {fileID: 7633577134726680316}
+  - {fileID: 5680785420077651172}
   m_Father: {fileID: 2514189066718152954}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2271,13 +2271,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 838afac312dcb1f4d952337aa349b4ce, type: 3}
---- !u!1 &5667084165084647412 stripped
+--- !u!1 &5680785420077651878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 32566675906681298, guid: 838afac312dcb1f4d952337aa349b4ce,
     type: 3}
   m_PrefabInstance: {fileID: 5680785420077651494}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7633577134726680316 stripped
+--- !u!4 &5680785420077651172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2826534094230247642, guid: 838afac312dcb1f4d952337aa349b4ce,
     type: 3}
