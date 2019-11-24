@@ -17,12 +17,17 @@ public class CameraP3 : MonoBehaviourPun, IPunObservable
     private Quaternion camCenter;
     void Start()
     {
-
         camCenter = cam.localRotation;
     }
     void Update()
     {
-        if (photonView.IsMine)
+        //if (photonView.IsMine)
+        //{
+        //    SetY();
+        //    SetX();
+        //    UpdateCursorLock();
+        //}
+        if(checked(photonView.IsMine))
         {
             SetY();
             SetX();
@@ -38,7 +43,6 @@ public class CameraP3 : MonoBehaviourPun, IPunObservable
         if (Quaternion.Angle(camCenter, t_delta) < maxAngle)
         {
             cam.localRotation = t_delta;
-
         }
     }
     void SetX()

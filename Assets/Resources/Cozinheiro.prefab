@@ -286,14 +286,14 @@ RectTransform:
   m_GameObject: {fileID: 2924270737656159205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6168065, y: 0.60082, z: 0.60082}
+  m_LocalScale: {x: 4.3142037, y: 1.6031972, z: 1.6031972}
   m_Children: []
   m_Father: {fileID: 8814474100059114943}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 155.00012, y: 40.168}
+  m_AnchoredPosition: {x: 222.00012, y: 56.45395}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6655854673876234066
@@ -432,14 +432,14 @@ RectTransform:
   m_GameObject: {fileID: 4561472739466671323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0924, y: 0.087046795, z: 1.0924}
+  m_LocalScale: {x: 2.914904, y: 0.2322712, z: 2.914904}
   m_Children: []
   m_Father: {fileID: 8814474100059114943}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 155, y: 37}
+  m_AnchoredPosition: {x: 222, y: 48}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8881026873517122163
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e3054de413777448c16583e578cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 15
+  velocidade: 20
   pv: {fileID: 7230136247671123783}
   raioRef: {fileID: 776911929383607713}
   raioDist: 0
@@ -746,9 +746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8987445606809835217}
   cam: {fileID: 6359042268226731424}
-  xSensitivity: 8
-  ySensitivity: 8
-  maxAngle: 50
+  xSensitivity: 10
+  ySensitivity: 10
+  maxAngle: 60
 --- !u!114 &7287276875009396682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,6 +1293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cozinheiro
       objectReference: {fileID: 0}
+    - target: {fileID: -4097746464622749797, guid: c14c6cbf58fa6654ab7a23a3678943f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
     - target: {fileID: -4216859302048453862, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1368,11 +1373,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
-    - target: {fileID: -4097746464622749797, guid: c14c6cbf58fa6654ab7a23a3678943f1,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
     - target: {fileID: -6057140222963153312, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Avatar
@@ -1384,6 +1384,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 9e157ca3772faf44e8aa0c457d08a993, type: 2}
     - target: {fileID: 5798252553363748664, guid: c14c6cbf58fa6654ab7a23a3678943f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
+    - target: {fileID: -4339412119995567418, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1404,11 +1409,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
     - target: {fileID: -76532914096774302, guid: c14c6cbf58fa6654ab7a23a3678943f1,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b6b130275a7ff7444a4bed9d8704e372, type: 2}
-    - target: {fileID: -4339412119995567418, guid: c14c6cbf58fa6654ab7a23a3678943f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
