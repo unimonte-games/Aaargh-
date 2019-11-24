@@ -57963,7 +57963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Mercadao
-  timer: 13
+  timer: 10
 --- !u!114 &1752167739
 MonoBehaviour:
   m_ObjectHideFlags: 0

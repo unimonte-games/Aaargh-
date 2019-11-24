@@ -564,7 +564,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5461071981140139811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 355700c6d9463754c925cde232215722, type: 2}
   m_CullingMode: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 6108372058532278256}
-  jumpforce: 400
+  jumpforce: 450
   rb: {fileID: 7801508330546836651}
   healthBar: {fileID: 6461583254554899248}
   IsGrounded: 0

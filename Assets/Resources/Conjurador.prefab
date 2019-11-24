@@ -683,7 +683,7 @@ MonoBehaviour:
   inimigo:
   - {fileID: 8270425458652378554, guid: ed391c25d7df3074e90875d65c194499, type: 3}
   anim: {fileID: 2593769332849907149}
-  jumpforce: 400
+  jumpforce: 450
   rb: {fileID: 1981338710499675798}
   healthBar: {fileID: 2685960348412966165}
   IsGrounded: 0
