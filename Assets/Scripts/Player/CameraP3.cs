@@ -27,12 +27,17 @@ public class CameraP3 : MonoBehaviourPun, IPunObservable
         //    SetX();
         //    UpdateCursorLock();
         //}
-        if(checked(photonView.IsMine))
+        if(!photonView.IsMine)
+        {
+            Destroy(cam);
+        }
+        else
         {
             SetY();
             SetX();
             UpdateCursorLock();
         }
+
     }
     void SetY()
     {

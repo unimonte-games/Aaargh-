@@ -77,9 +77,8 @@ public class HabiCozi : MonoBehaviourPun, IPunObservable
             objetos[objC].SetActive(false);
             objC += 1;
         }*/
-        objetos[objN].SetActive(true);
         objetos[objC] = PhotonNetwork.Instantiate(objetos[objC].name, PosiInstantiate.position + PosiInstantiate.forward, PosiInstantiate.rotation);
-        Destroy(objetos[objC], 0.3f);
+        Destroy(objetos[objC], 1f);
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
