@@ -34,7 +34,7 @@ public class IA : MonoBehaviour
         {
             if ((PPP[i].transform.position - transform.position).magnitude < Dist)
             {
-                alvo = PPP[1];
+                alvo = PPP[i];
                 Dist = (PPP[i].transform.position - transform.position).magnitude;
             }
         }
